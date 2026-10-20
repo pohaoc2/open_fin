@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>選擇權＝保險｜看懂再買</title>
+<meta name="description" content="用買保險的方式理解選擇權：誰付保費、誰承擔大損失。">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="site-header"><div class="inner">
+  <a class="brand" href="../index.html">看懂<span>再買</span></a>
+  <nav class="site-nav" aria-label="主選單">
+    <a href="../products/index.html">產品拆解</a>
+    <a href="../tools/index.html">壓力測試與試算</a>
+    <a href="../learn/index.html">基礎課</a>
+    <a href="../questions.html">問理專清單</a>
+    <a href="../cases.html">真實案例</a>
+    <a href="../glossary.html">白話詞彙</a>
+    <a href="../about.html">關於</a>
+  </nav>
+  <button class="theme-toggle" type="button" aria-label="切換深淺色">◐</button>
+</div></header>
+
+<main>
+  <p class="breadcrumb"><a href="../index.html">首頁</a> › <a href="index.html">基礎課</a> › 選擇權＝保險</p>
+  <h1>1. 選擇權＝保險</h1>
+  <p class="lead">幾乎所有「利息特別高」的包裝商品，秘密都在這裡：你不是在存錢，而是在賣保險。</p>
+
+  <h2>先從汽車保險講起</h2>
+  <p>你每年付保險公司 2 萬元保費。沒出事，這 2 萬就是保險公司賺的；出了大車禍，保險公司要賠你幾十萬。</p>
+  <p>選擇權就是金融市場的保險：</p>
+  <ul>
+    <li><strong>買方</strong>：付一筆小錢（叫<dfn data-term="權利金">權利金</dfn>，就是保費），換一個保障或機會。</li>
+    <li><strong>賣方</strong>：收這筆保費，但在特定情況要負責賠。</li>
+  </ul>
+  <p>最常見的兩種：</p>
+  <div class="table-wrap"><table>
+    <tr><th>名稱</th><th>白話</th><th>買方得到</th><th>賣方承擔</th></tr>
+    <tr><td><dfn data-term="賣權">賣權</dfn></td><td>跌價保險</td><td>價格大跌時有人賠</td><td>大跌時要用約定價格把東西接下來</td></tr>
+    <tr><td><dfn data-term="買權">買權</dfn></td><td>漲價彩券</td><td>價格大漲時能賺差價</td><td>大漲時要把漲幅讓給買方</td></tr>
+  </table></div>
+  <p>那個「約定價格」叫<dfn data-term="履約價">履約價</dfn>。</p>
+
+  <h2>用 100 萬算一次：賣跌價保險</h2>
+  <p>假設你有 100 萬，跟銀行約定：「三個月後，如果某個股票指數跌到 100 點以下，我願意用 100 點的價格買下 100 萬的指數。」為了這個承諾，你先收到 2 萬元保費。</p>
+  <div class="scenarios">
+    <div class="scenario best"><h4>指數漲到 110</h4><p class="big">+2 萬</p><p>沒事發生，保費入袋。三個月賺 2%，年化約 8%，看起來像高利定存。</p></div>
+    <div class="scenario mid"><h4>指數小跌到 97</h4><p class="big">−1 萬</p><p>你要用 100 買到只值 97 的東西，賠 3 萬，扣掉保費 2 萬，淨賠 1 萬。</p></div>
+    <div class="scenario worst"><h4>指數崩到 70</h4><p class="big">−28 萬</p><p>你要用 100 萬買進只值 70 萬的指數，賠 30 萬，保費只能補 2 萬。</p></div>
+  </div>
+  <p>這就是賣保險的本質：<strong>小賺很多次，大賠一次</strong>。平常看起來非常穩，直到遇上 2008 年那種大跌。</p>
+
+  
+  <figure style="margin:1.4em 0">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px">
+      <svg viewBox="0 0 330 220" role="img" aria-labelledby="sp-t sp-d" style="background:var(--surface);border:1px solid var(--border);border-radius:12px">
+        <title id="sp-t">賣出賣權的損益</title>
+        <desc id="sp-d">市價在 100 以上時，賺固定的 3 元保費；跌破 100 後，每跌 1 元就多賠 1 元。</desc>
+        <text x="16" y="22" style="fill:var(--text);font-size:14px;font-weight:700">賣出賣權（賣跌價保險）</text>
+        <line x1="30" y1="40" x2="30" y2="190" style="stroke:var(--border)"/>
+        <line x1="30" y1="110" x2="315" y2="110" style="stroke:var(--muted)" stroke-dasharray="4 3"/>
+        <line x1="170" y1="40" x2="170" y2="190" style="stroke:var(--border)" stroke-dasharray="2 3"/>
+        <polyline points="30,184 170,104 315,104" fill="none" style="stroke:var(--danger)" stroke-width="3" stroke-linejoin="round"/>
+        <text x="236" y="98" style="fill:var(--good);font-size:12px">賺保費 +3</text>
+        <text x="40" y="200" style="fill:var(--danger);font-size:12px">大跌：賠很多</text>
+        <text x="174" y="52" style="fill:var(--muted);font-size:11px">履約價 100</text>
+        <text x="270" y="126" style="fill:var(--muted);font-size:11px">損益 0</text>
+        <text x="250" y="214" style="fill:var(--muted);font-size:11px">到期市價 →</text>
+      </svg>
+      <svg viewBox="0 0 330 220" role="img" aria-labelledby="bc-t bc-d" style="background:var(--surface);border:1px solid var(--border);border-radius:12px">
+        <title id="bc-t">買入買權的損益</title>
+        <desc id="bc-d">市價在 100 以下時，最多賠掉付出的 3 元；漲過 103 之後開始賺，漲越多賺越多。</desc>
+        <text x="16" y="22" style="fill:var(--text);font-size:14px;font-weight:700">買入買權（買漲價彩券）</text>
+        <line x1="30" y1="40" x2="30" y2="190" style="stroke:var(--border)"/>
+        <line x1="30" y1="110" x2="315" y2="110" style="stroke:var(--muted)" stroke-dasharray="4 3"/>
+        <line x1="170" y1="40" x2="170" y2="190" style="stroke:var(--border)" stroke-dasharray="2 3"/>
+        <polyline points="30,116 170,116 315,36" fill="none" style="stroke:var(--chart-1)" stroke-width="3" stroke-linejoin="round"/>
+        <text x="40" y="134" style="fill:var(--danger);font-size:12px">最多賠彩券錢 −3</text>
+        <text x="222" y="56" style="fill:var(--good);font-size:12px">大漲：賺很多</text>
+        <text x="174" y="52" style="fill:var(--muted);font-size:11px">履約價 100</text>
+        <text x="270" y="102" style="fill:var(--muted);font-size:11px">損益 0</text>
+        <text x="250" y="214" style="fill:var(--muted);font-size:11px">到期市價 →</text>
+      </svg>
+    </div>
+    <figcaption class="small muted">橫軸：到期時的市價；縱軸：你的損益。左邊是賣方，右邊是買方，兩張圖剛好是「保險公司」和「彩券玩家」的處境。</figcaption>
+  </figure>
+
+
+  <h2>保費為什麼有高有低？</h2>
+  <p>就像住海邊的房子火險比較貴，越容易「出事」的東西，保費越高。在金融市場，「容易出事」就是價格晃得厲害，叫<dfn data-term="波動度">波動度</dfn>。</p>
+  <p>所以當商品給你很高的利息，通常代表：它綁的股票或貨幣很會晃，或是那條「警戒線」離現在很近。<strong>高利息不是銀行大方，而是你承擔的風險比較大。</strong></p>
+
+  <h2>在包裝商品裡，它藏在哪？</h2>
+  <div class="table-wrap"><table>
+    <tr><th>商品</th><th>裡面的選擇權</th><th>你是</th></tr>
+    <tr><td><a href="../products/fcn.html">FCN</a></td><td>賣出股票的跌價保險（而且常是好幾檔一起，只看跌最多那檔）</td><td>賣方，收保費</td></tr>
+    <tr><td><a href="../products/dci.html">雙元貨幣（DCI）</a></td><td>賣出外幣的跌價保險</td><td>賣方，收保費</td></tr>
+    <tr><td><a href="../products/trf.html">TRF</a></td><td>一連串選擇權，賠的那邊加倍</td><td>大多是賣方</td></tr>
+    <tr><td><a href="../products/structured-note.html">保本型連動債</a></td><td>買入指數的漲價彩券</td><td>買方，付保費</td></tr>
+    <tr><td><a href="../products/ilp.html">投資型保單</a></td><td>通常沒有選擇權，重點在費用</td><td>—</td></tr>
+  </table></div>
+
+  <div class="callout warn">
+    <strong>一句話記住</strong>
+    <p>看到「年息 8%、10%、15%」時，先問：<strong>「我是不是在賣保險？出事的時候我要賠多少？」</strong>保費收得越多，出事時賠得越重。</p>
+  </div>
+
+  <p><a href="bonds.html">下一課：債券＝借錢給人 →</a></p>
+</main>
+
+<footer class="site-footer"><div class="inner">
+  <p><strong>本站僅供教育，不是投資建議。</strong>不推薦任何金融機構或個別商品，也不收費、不放廣告。內容可能有錯，請以商品公開說明書、保單條款與主管機關公告為準，重大決定前可諮詢無利益關係的專業人士。</p>
+  <p>文字內容採 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hant">CC BY-SA 4.0</a>，程式碼採 MIT 授權。<a href="../about.html">關於本站與如何參與</a></p>
+</div></footer>
+<script type="module" src="../assets/site.js"></script>
+</body>
+</html>

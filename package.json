@@ -1,0 +1,6 @@
+{
+  "name": "open-fin",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "node --test tests/" }
+}

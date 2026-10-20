@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>關於本站｜看懂再買</title>
+<meta name="description" content="看懂再買的原則、免責聲明、資料來源與參與方式。">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="site-header"><div class="inner">
+  <a class="brand" href="index.html">看懂<span>再買</span></a>
+  <nav class="site-nav" aria-label="主選單">
+    <a href="products/index.html">產品拆解</a>
+    <a href="tools/index.html">壓力測試與試算</a>
+    <a href="learn/index.html">基礎課</a>
+    <a href="questions.html">問理專清單</a>
+    <a href="cases.html">真實案例</a>
+    <a href="glossary.html">白話詞彙</a>
+    <a href="about.html">關於</a>
+  </nav>
+  <button class="theme-toggle" type="button" aria-label="切換深淺色">◐</button>
+</div></header>
+
+<main>
+  <p class="breadcrumb"><a href="index.html">首頁</a> › 關於</p>
+  <h1>關於本站</h1>
+  <p class="lead">「看懂再買」是一個免費、開源的教育網站，用白話拆解常見的包裝型金融商品。</p>
+
+  <h2 id="why">為什麼做這個網站</h2>
+  <p>FCN、DCI、連動債、投資型保單這些商品，說明書動輒幾十頁，用字艱深。賣的人很懂，買的人常常不懂，兩邊的資訊不對等。</p>
+  <p>本站想做的事很單純：把商品拆成簡單的零件（存款、債券、保險、基金），讓你看清楚利息從哪裡來、風險在哪裡、費用有多少。看懂之後，要不要買是你的決定。</p>
+
+  <h2 id="principles">原則</h2>
+  <ol class="steps">
+    <li><b>只做教育，不給投資建議。</b>本站不會告訴你該買或該賣什麼，也不針對任何人的個別狀況提供建議。</li>
+    <li><b>不推薦機構或商品。</b>自組方法只用「指數 ETF」「短期公債」「定期壽險」這類一般名稱。</li>
+    <li><b>不收錢。</b>沒有廣告、沒有導購連結、沒有佣金、沒有追蹤器。</li>
+    <li><b>中立公平。</b>每個商品都寫「可能適合誰」。這些商品本身合法，也有合理的使用情境。</li>
+    <li><b>有出處、可檢查。</b>數字盡量附來源；壓力測試的算法與資料全部公開在 GitHub。</li>
+    <li><b>白話優先。</b>國中生看得懂是目標。看不懂是我們的問題，歡迎告訴我們。</li>
+  </ol>
+
+  <h2 id="disclaimer">免責聲明</h2>
+  <div class="disclaimer">
+    <p>本站內容僅供一般教育與資訊參考，不構成任何投資、保險、稅務或法律建議，也不是任何金融商品的要約或推薦。本站不是投資顧問、不是金融機構，與任何銀行、證券商、保險公司或發行機構都沒有利益關係。</p>
+    <p>壓力測試與試算是簡化模型，用歷史月資料計算，<b>不代表未來結果</b>，也不等於任何實際商品的表現。實際商品條件差異很大，請以公開說明書、產品說明書、風險預告書與保單條款為準。</p>
+    <p>內容可能有錯誤或過時。做重大財務決定前，請自行查證，必要時諮詢與你沒有利益關係的專業人士。</p>
+  </div>
+
+  <h2 id="data">資料與方法</h2>
+  <ul>
+    <li><b>股價：</b>S&amp;P 500 月資料，來自 Robert Shiller 整理的公開資料集。含息報酬依股息殖利率估算。</li>
+    <li><b>利率與匯率：</b>美國聖路易聯邦準備銀行 FRED 資料庫（3 個月國庫券利率、澳幣、人民幣、新台幣匯率）。</li>
+    <li><b>商品模型：</b>每個商品用簡化的規則重算，模型的限制寫在每個壓力測試下方的「這個模型簡化了什麼」。</li>
+  </ul>
+  <p>原始碼與資料：<a href="https://github.com/pohaoc2/open_fin">github.com/pohaoc2/open_fin</a></p>
+
+  <h2 id="contribute">如何參與</h2>
+  <ul>
+    <li><b>發現錯誤或看不懂：</b>到 GitHub 開一個 <a href="https://github.com/pohaoc2/open_fin/issues">Issue</a>，說明哪一頁、哪一句。</li>
+    <li><b>想補充內容：</b>請先讀 <a href="https://github.com/pohaoc2/open_fin/blob/main/CONTRIBUTING.md">貢獻指南</a>，裡面有白話寫作規範與商品頁模板。</li>
+    <li><b>利益揭露：</b>如果你在金融或保險業工作，歡迎參與，但請在貢獻時說明。</li>
+  </ul>
+
+  <h2 id="license">授權</h2>
+  <p>文字內容採 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hant">創用 CC 姓名標示–相同方式分享 4.0</a>；程式碼採 MIT 授權。歡迎轉載與改作，請註明出處並以相同方式分享。</p>
+</main>
+
+<footer class="site-footer"><div class="inner">
+  <p><strong>本站僅供教育，不是投資建議。</strong>不推薦任何金融機構或個別商品，也不收費、不放廣告。內容可能有錯，請以商品公開說明書、保單條款與主管機關公告為準，重大決定前可諮詢無利益關係的專業人士。</p>
+  <p>文字內容採 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hant">CC BY-SA 4.0</a>，程式碼採 MIT 授權。<a href="about.html">關於本站與如何參與</a></p>
+</div></footer>
+<script type="module" src="assets/site.js"></script>
+</body>
+</html>

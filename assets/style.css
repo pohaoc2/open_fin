@@ -1,0 +1,190 @@
+/* 拆解包裝金融商品 — 共用樣式
+ * 元件：.breakdown（白話拆解卡）、.risk（風險燈號）、.callout、.qa（問理專）、
+ *       .compare（比較表）、.steps、.pill、dfn[data-term]（詞彙提示）
+ */
+:root {
+  --bg: #fbfaf7;
+  --surface: #ffffff;
+  --surface-2: #f3f1ec;
+  --text: #1f2328;
+  --muted: #5d6470;
+  --border: #e2ded6;
+  --accent: #1f6f5c;
+  --accent-soft: #e3f1ec;
+  --warn: #a4440f;
+  --warn-soft: #fbece2;
+  --danger: #b42318;
+  --danger-soft: #fdecea;
+  --info: #1d5fa8;
+  --info-soft: #e7f0fb;
+  --good: #23743b;
+  --good-soft: #e6f4ea;
+  --chart-1: #1f6f5c;
+  --chart-2: #c2621a;
+  --chart-3: #5b6cc2;
+  --chart-4: #8a8f98;
+  --radius: 12px;
+  --maxw: 860px;
+  --font: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15171a; --surface: #1d2024; --surface-2: #24282d; --text: #e7e9ec; --muted: #a2a9b4;
+    --border: #343a41; --accent: #5cc4a6; --accent-soft: #17332c; --warn: #f0a46c; --warn-soft: #3a2618;
+    --danger: #f2877d; --danger-soft: #3b1d1a; --info: #7fb2ee; --info-soft: #18283b; --good: #7ccf92;
+    --good-soft: #17301f; --chart-1: #5cc4a6; --chart-2: #f0a46c; --chart-3: #9aa8f0; --chart-4: #8a8f98;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #15171a; --surface: #1d2024; --surface-2: #24282d; --text: #e7e9ec; --muted: #a2a9b4;
+  --border: #343a41; --accent: #5cc4a6; --accent-soft: #17332c; --warn: #f0a46c; --warn-soft: #3a2618;
+  --danger: #f2877d; --danger-soft: #3b1d1a; --info: #7fb2ee; --info-soft: #18283b; --good: #7ccf92;
+  --good-soft: #17301f; --chart-1: #5cc4a6; --chart-2: #f0a46c; --chart-3: #9aa8f0; --chart-4: #8a8f98;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+  font-size: 17px; line-height: 1.8; letter-spacing: .01em;
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+img, svg { max-width: 100%; }
+:focus-visible { outline: 3px solid var(--info); outline-offset: 2px; border-radius: 4px; }
+
+/* ---------- layout ---------- */
+.site-header { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 20; }
+.site-header .inner { max-width: 1100px; margin: 0 auto; padding: 10px 16px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.brand { font-weight: 700; color: var(--text); text-decoration: none; font-size: 1.05rem; white-space: nowrap; }
+.brand span { color: var(--accent); }
+.site-nav { display: flex; gap: 4px 14px; flex-wrap: wrap; font-size: .95rem; }
+.site-nav a { color: var(--muted); text-decoration: none; padding: 2px 0; }
+.site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--text); border-bottom: 2px solid var(--accent); }
+.theme-toggle { margin-left: auto; background: none; border: 1px solid var(--border); color: var(--muted); border-radius: 999px; padding: 2px 10px; cursor: pointer; font: inherit; font-size: .85rem; }
+
+main { max-width: var(--maxw); margin: 0 auto; padding: 24px 16px 64px; }
+main.wide { max-width: 1100px; }
+.site-footer { border-top: 1px solid var(--border); color: var(--muted); font-size: .88rem; }
+.site-footer .inner { max-width: var(--maxw); margin: 0 auto; padding: 24px 16px 40px; }
+
+h1 { font-size: 1.9rem; line-height: 1.35; margin: .6em 0 .3em; }
+h2 { font-size: 1.4rem; margin: 2.2em 0 .6em; padding-top: .4em; border-top: 1px solid var(--border); }
+h3 { font-size: 1.12rem; margin: 1.6em 0 .4em; }
+.lead { font-size: 1.12rem; color: var(--muted); margin-top: 0; }
+.muted { color: var(--muted); }
+.small { font-size: .88rem; }
+.breadcrumb { font-size: .88rem; color: var(--muted); }
+.breadcrumb a { color: var(--muted); }
+
+/* 目錄 */
+.toc { background: var(--surface-2); border-radius: var(--radius); padding: 12px 18px; font-size: .95rem; }
+.toc ol { margin: 6px 0 0; padding-left: 1.3em; columns: 2 220px; }
+
+/* ---------- 白話拆解卡 ---------- */
+.breakdown { background: var(--surface); border: 2px solid var(--accent); border-radius: var(--radius); overflow: hidden; margin: 1.2em 0; }
+.breakdown header { background: var(--accent); color: #fff; padding: 10px 18px; font-weight: 700; font-size: 1.1rem; }
+:root[data-theme="dark"] .breakdown header { color: #0d1f1a; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .breakdown header { color: #0d1f1a; } }
+.breakdown dl { margin: 0; display: grid; grid-template-columns: 8.5em 1fr; }
+.breakdown dt, .breakdown dd { padding: 10px 18px; border-top: 1px solid var(--border); margin: 0; }
+.breakdown dt { font-weight: 700; color: var(--muted); background: var(--surface-2); }
+.breakdown footer { padding: 10px 18px; border-top: 1px solid var(--border); background: var(--surface-2); }
+@media (max-width: 560px) {
+  .breakdown dl { grid-template-columns: 1fr; }
+  .breakdown dt { padding-bottom: 2px; }
+  .breakdown dd { border-top: none; padding-top: 2px; }
+}
+
+/* 風險燈號：<ul class="risk"><li data-level="4">本金</li>… level 1–5 */
+.risk { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 6px 18px; }
+.risk li { display: flex; justify-content: space-between; gap: 8px; }
+.risk li::after { content: "○○○○○"; letter-spacing: 2px; color: var(--border); font-size: .9em; }
+.risk li[data-level="1"]::after { content: "●○○○○"; color: var(--good); }
+.risk li[data-level="2"]::after { content: "●●○○○"; color: var(--good); }
+.risk li[data-level="3"]::after { content: "●●●○○"; color: var(--warn); }
+.risk li[data-level="4"]::after { content: "●●●●○"; color: var(--danger); }
+.risk li[data-level="5"]::after { content: "●●●●●"; color: var(--danger); }
+
+/* ---------- callouts ---------- */
+.callout { border-left: 4px solid var(--info); background: var(--info-soft); padding: 12px 16px; border-radius: 0 var(--radius) var(--radius) 0; margin: 1.2em 0; }
+.callout.warn { border-color: var(--warn); background: var(--warn-soft); }
+.callout.danger { border-color: var(--danger); background: var(--danger-soft); }
+.callout.good { border-color: var(--good); background: var(--good-soft); }
+.callout > :first-child { margin-top: 0; }
+.callout > :last-child { margin-bottom: 0; }
+.callout strong:first-child { display: block; }
+
+/* ---------- 表格 ---------- */
+.table-wrap { overflow-x: auto; margin: 1em 0; }
+table { border-collapse: collapse; width: 100%; font-size: .95rem; }
+th, td { border-bottom: 1px solid var(--border); padding: 8px 10px; text-align: left; vertical-align: top; }
+th { background: var(--surface-2); font-weight: 700; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ---------- 情境（最好/普通/最壞） ---------- */
+.scenarios { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 1em 0; }
+.scenario { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
+.scenario h4 { margin: 0 0 6px; font-size: 1rem; }
+.scenario.best { border-top: 4px solid var(--good); }
+.scenario.mid { border-top: 4px solid var(--info); }
+.scenario.worst { border-top: 4px solid var(--danger); }
+.scenario .big { font-size: 1.5rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+/* ---------- 費用瀑布（純 CSS 長條）<div class="fees"><div class="fee" style="--w:3%">… ---------- */
+.fees { display: grid; gap: 6px; margin: 1em 0; }
+.fee { display: grid; grid-template-columns: 9em 1fr 5em; align-items: center; gap: 10px; font-size: .95rem; }
+.fee .bar { height: 14px; background: var(--warn); border-radius: 4px; width: var(--w, 10%); min-width: 4px; }
+.fee .val { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ---------- 問理專清單 ---------- */
+.qa { list-style: none; padding: 0; counter-reset: q; }
+.qa > li { counter-increment: q; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px 12px 52px; margin: 10px 0; position: relative; break-inside: avoid; }
+.qa > li::before { content: counter(q); position: absolute; left: 14px; top: 13px; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: var(--surface); font-weight: 700; display: grid; place-items: center; font-size: .9rem; }
+.qa .q { font-weight: 700; display: block; margin-bottom: 4px; }
+.qa .ok, .qa .bad { display: block; font-size: .93rem; }
+.qa .ok::before { content: "✓ 好的回答："; color: var(--good); font-weight: 700; }
+.qa .bad::before { content: "⚠ 警訊："; color: var(--danger); font-weight: 700; }
+.qa .why { display: block; font-size: .9rem; color: var(--muted); }
+
+/* ---------- 卡片清單（首頁） ---------- */
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin: 1em 0; }
+.card { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; text-decoration: none; color: var(--text); transition: border-color .15s, transform .15s; }
+a.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card h3 { margin: 0 0 4px; font-size: 1.1rem; color: var(--accent); }
+.card p { margin: 0; color: var(--muted); font-size: .94rem; }
+.pill { display: inline-block; font-size: .78rem; padding: 1px 9px; border-radius: 999px; background: var(--surface-2); color: var(--muted); margin: 0 4px 4px 0; }
+.pill.danger { background: var(--danger-soft); color: var(--danger); }
+.pill.warn { background: var(--warn-soft); color: var(--warn); }
+
+/* ---------- 步驟（自組方法） ---------- */
+.steps { counter-reset: s; list-style: none; padding: 0; }
+.steps > li { counter-increment: s; position: relative; padding: 2px 0 12px 44px; }
+.steps > li::before { content: counter(s); position: absolute; left: 0; top: 2px; width: 30px; height: 30px; border-radius: 8px; background: var(--accent-soft); color: var(--accent); font-weight: 700; display: grid; place-items: center; }
+
+/* ---------- 詞彙提示 <dfn data-term="賣權">賣保險</dfn> ---------- */
+dfn[data-term] { font-style: normal; border-bottom: 1px dashed var(--accent); cursor: help; position: relative; }
+.term-tip { position: absolute; z-index: 50; max-width: 300px; background: var(--text); color: var(--bg); font-size: .88rem; line-height: 1.6; padding: 10px 12px; border-radius: 8px; box-shadow: 0 6px 24px rgba(0,0,0,.2); }
+.term-tip b { display: block; margin-bottom: 2px; }
+.term-tip a { color: inherit; }
+
+/* ---------- 表單元件（工具頁） ---------- */
+.controls { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px 16px; background: var(--surface-2); padding: 14px 16px; border-radius: var(--radius); margin: 1em 0; }
+.controls label { display: grid; gap: 2px; font-size: .9rem; color: var(--muted); }
+.controls input, .controls select { font: inherit; font-size: .95rem; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 6px 8px; width: 100%; }
+button.btn { font: inherit; background: var(--accent); color: var(--surface); border: none; border-radius: 8px; padding: 8px 16px; cursor: pointer; }
+button.btn.ghost { background: none; color: var(--accent); border: 1px solid var(--accent); }
+
+.sources { font-size: .88rem; color: var(--muted); }
+.sources li { margin: 4px 0; }
+.disclaimer { font-size: .88rem; color: var(--muted); background: var(--surface-2); border-radius: var(--radius); padding: 10px 14px; }
+
+@media print {
+  .site-header, .site-footer, .theme-toggle, .no-print { display: none !important; }
+  body { background: #fff; color: #000; font-size: 12pt; }
+  .qa > li { border-color: #999; }
+  a { color: #000; }
+}

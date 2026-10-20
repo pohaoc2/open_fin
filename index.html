@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>看懂再買｜包裝型金融商品白話百科</title>
+<meta name="description" content="用白話拆解 FCN、TRF、DCI、連動債、投資型保單：錢從哪裡來、風險在哪、歷史危機重跑、怎麼自己組。免費、開源、不是投資建議。">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<style>
+  .hero { padding: 12px 0 4px; }
+  .hero h1 { font-size: 2.2rem; margin-bottom: .2em; }
+  .promise { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin: 1.4em 0; padding: 0; list-style: none; }
+  .promise li { background: var(--surface-2); border-radius: var(--radius); padding: 10px 14px; font-size: .94rem; }
+  .promise b { display: block; color: var(--accent); }
+  .formula { font-size: 1.15rem; text-align: center; background: var(--surface); border: 1px dashed var(--accent); border-radius: var(--radius); padding: 16px; margin: 1.2em 0; }
+  .formula b { color: var(--danger); }
+</style>
+</head>
+<body>
+<header class="site-header"><div class="inner">
+  <a class="brand" href="index.html">看懂<span>再買</span></a>
+  <nav class="site-nav" aria-label="主選單">
+    <a href="products/index.html">產品拆解</a>
+    <a href="tools/index.html">壓力測試與試算</a>
+    <a href="learn/index.html">基礎課</a>
+    <a href="questions.html">問理專清單</a>
+    <a href="cases.html">真實案例</a>
+    <a href="glossary.html">白話詞彙</a>
+    <a href="about.html">關於</a>
+  </nav>
+  <button class="theme-toggle" type="button" aria-label="切換深淺色">◐</button>
+</div></header>
+
+<main>
+  <section class="hero">
+    <h1>理專跟你推了什麼？</h1>
+    <p class="lead">把看起來很複雜的金融商品拆開來，用白話告訴你：利息從哪裡來、最壞會怎樣、銀行賺多少，以及能不能自己用簡單的東西組出來。</p>
+  </section>
+
+  <div class="formula">
+    看起來很高的利息 ＝ 一般利息 ＋ <b>你幫別人承擔風險收到的錢</b> － 銀行的費用
+  </div>
+
+  <h2 id="pick" style="border-top:none">選一個你聽過的商品</h2>
+  <div class="cards">
+    <a class="card" href="products/fcn.html">
+      <h3>FCN 固定配息連結股票債</h3>
+      <p>年息 8–15% 的「類定存」？其實是在幫別人買股票跌價保險。</p>
+      <p><span class="pill danger">本金可能大虧</span><span class="pill warn">拿到股票</span></p>
+    </a>
+    <a class="card" href="products/dci.html">
+      <h3>DCI 雙元貨幣（組合式商品）</h3>
+      <p>比外幣定存多一點利息，代價是可能被換成跌價的貨幣。</p>
+      <p><span class="pill warn">匯率風險</span><span class="pill">期間短</span></p>
+    </a>
+    <a class="card" href="products/trf.html">
+      <h3>TRF 目標可贖回遠期</h3>
+      <p>賺有上限、賠的時候加倍算。2015 年人民幣大貶時傷了很多人。</p>
+      <p><span class="pill danger">虧損可能很大</span><span class="pill danger">槓桿</span></p>
+    </a>
+    <a class="card" href="products/structured-note.html">
+      <h3>連動債／保本型商品</h3>
+      <p>「保本」的前提是發行機構不倒、你抱到到期。2008 年雷曼倒了。</p>
+      <p><span class="pill warn">發行機構倒閉</span><span class="pill">綁很久</span></p>
+    </a>
+    <a class="card" href="products/ilp.html">
+      <h3>投資型保單（含類全委）</h3>
+      <p>保險加基金加上好幾層費用。長期下來，費用可能吃掉一大塊。</p>
+      <p><span class="pill warn">多層費用</span><span class="pill warn">解約費用</span></p>
+    </a>
+    <a class="card" href="products/monthly-income-fund.html">
+      <h3>月配息基金／高收益債基金</h3>
+      <p>每月有錢入帳，但配息不等於賺錢，可能是從你的本金拿出來配的。</p>
+      <p><span class="pill warn">配息來自本金</span><span class="pill warn">匯率風險</span></p>
+    </a>
+    <a class="card" href="products/target-maturity-bond.html">
+      <h3>目標到期債券基金</h3>
+      <p>看起來像幾年期定存，其實報酬不保證、可能踩到違約，提前贖回還要付費。</p>
+      <p><span class="pill warn">不是定存</span><span class="pill">提前贖回費</span></p>
+    </a>
+    <a class="card" href="products/index.html">
+      <h3>七種商品一次比較 →</h3>
+      <p>拆開來各是什麼、你賺什麼、你承擔什麼，一張表看完。</p>
+    </a>
+  </div>
+
+  <h2 id="tools">每個商品頁都有</h2>
+  <div class="cards">
+    <div class="card"><h3>白話拆解卡</h3><p>一張卡看懂：你以為買到什麼、實際上買到什麼、最慘會怎樣。</p></div>
+    <a class="card" href="tools/stress-test.html"><h3>歷史危機重跑</h3><p>把商品放回 2000 網路泡沫、2008 金融海嘯、2015 人民幣大貶、2020 疫情，看看會發生什麼。</p></a>
+    <a class="card" href="questions.html"><h3>問理專清單</h3><p>買之前該問的問題，附「好的回答」和「警訊」。可以列印帶去銀行。</p></a>
+    <a class="card" href="learn/index.html"><h3>自己組的方法</h3><p>用現金、債券、指數 ETF、選擇權組出類似效果，順便看懂自組的缺點。</p></a>
+  </div>
+
+  <h2 id="principles">我們的原則</h2>
+  <ul class="promise">
+    <li><b>不是投資建議</b>只講原理和風險，不叫你買或賣。</li>
+    <li><b>不收錢</b>沒有廣告、沒有導購、沒有佣金。</li>
+    <li><b>中立</b>每個商品也寫「可能適合誰」。</li>
+    <li><b>有出處</b>數據與說法附來源，算法全部公開。</li>
+    <li><b>開源</b>任何人都能檢查、指正、補充。</li>
+  </ul>
+  <p class="muted small">這些商品本身不違法，也不一定不好。問題通常出在「沒看懂就買」。本站希望你買之前能看懂；看懂之後要不要買，是你的決定。</p>
+</main>
+
+<footer class="site-footer"><div class="inner">
+  <p><strong>本站僅供教育，不是投資建議。</strong>不推薦任何金融機構或個別商品，也不收費、不放廣告。內容可能有錯，請以商品公開說明書、保單條款與主管機關公告為準，重大決定前可諮詢無利益關係的專業人士。</p>
+  <p>文字內容採 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hant">CC BY-SA 4.0</a>，程式碼採 MIT 授權。<a href="about.html">關於本站與如何參與</a></p>
+</div></footer>
+<script type="module" src="assets/site.js"></script>
+</body>
+</html>

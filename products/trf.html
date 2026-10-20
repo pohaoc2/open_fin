@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TRF 目標可贖回遠期合約｜看懂再買</title>
+<meta name="description" content="TRF 為什麼讓許多台灣企業和個人在人民幣貶值時大賠？白話拆解：賺有上限、賠加倍的一串匯率合約。含壓力測試與問理專清單。">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="site-header"><div class="inner">
+  <a class="brand" href="../index.html">看懂<span>再買</span></a>
+  <nav class="site-nav" aria-label="主選單">
+    <a href="../products/index.html">產品拆解</a>
+    <a href="../tools/index.html">壓力測試與試算</a>
+    <a href="../learn/index.html">基礎課</a>
+    <a href="../questions.html">問理專清單</a>
+    <a href="../cases.html">真實案例</a>
+    <a href="../glossary.html">白話詞彙</a>
+    <a href="../about.html">關於</a>
+  </nav>
+  <button class="theme-toggle" type="button" aria-label="切換深淺色">◐</button>
+</div></header>
+
+<main>
+  <p class="breadcrumb"><a href="../index.html">首頁</a> › <a href="index.html">產品拆解</a> › TRF</p>
+  <h1>TRF 目標可贖回遠期合約</h1>
+  <p class="lead">TRF 是一串每月結算的匯率約定：猜對時賺的錢有上限，賺夠就提早結束；猜錯時賠兩倍，而且一直賠到合約結束。</p>
+
+  <nav class="toc" aria-label="本頁目錄">
+    <strong>本頁目錄</strong>
+    <ol>
+      <li><a href="#card">白話拆解卡</a></li>
+      <li><a href="#source">錢從哪裡來</a></li>
+      <li><a href="#bank">銀行賺多少</a></li>
+      <li><a href="#cases">最好、普通、最壞</a></li>
+      <li><a href="#stress">壓力測試</a></li>
+      <li><a href="#diy">替代方案</a></li>
+      <li><a href="#ask">問理專的問題</a></li>
+      <li><a href="#fit">可能適合誰</a></li>
+      <li><a href="#sources">出處</a></li>
+    </ol>
+  </nav>
+
+  <div class="callout danger">
+    <strong>先說結論</strong>
+    <p>TRF 的虧損可能<strong>遠大於你拿出來的錢</strong>。2014–2016 年人民幣貶值時，台灣有許多企業和個人因 TRF 大額虧損，引發大量糾紛，主管機關自 2015 年起陸續收緊規定，包括要求設定最大損失上限。本頁的目的是幫你看懂風險，不是教你操作。</p>
+  </div>
+
+  <h2 id="card">白話拆解卡</h2>
+  <article class="breakdown">
+    <header>TRF（Target Redemption Forward，目標可贖回遠期合約）</header>
+    <dl>
+      <dt>你以為</dt>
+      <dd>「人民幣長期會升值」，簽一份約定就能每月賺匯差，賺夠了合約自動結束，很划算。</dd>
+      <dt>實際上</dt>
+      <dd>你和銀行簽了一長串（常見 12–24 次）每月結算的<dfn data-term="遠期合約">匯率約定</dfn>。賺的那一邊有上限，賠的那一邊是<dfn data-term="槓桿">兩倍</dfn>。2015 年以前賣出的 TRF 虧損沒有上限；之後主管機關要求設最大損失上限，但上限通常仍是本金或權利金的好幾倍。</dd>
+      <dt>利息從哪來</dt>
+      <dd>TRF 給你一個比市場好的匯率，這個「好處」是你用「賠錢時加倍」和「賺錢時封頂」換來的。本質上你賣了好幾份匯率保險給銀行。</dd>
+      <dt>最慘情況</dt>
+      <dd>人民幣一路貶值，合約不會提早結束，你每個月都要用兩倍金額賠差價，直到最後一期。總虧損可以是當初「獲利上限」的幾十倍。</dd>
+      <dt>銀行賺什麼</dt>
+      <dd>合約設計時的隱含利潤（你簽約當下，合約對你的<dfn data-term="合理價">合理價值</dfn>通常已經是負的），加上之後的避險與交易收入。</dd>
+      <dt>隱藏陷阱</dt>
+      <dd>賺的時候合約很快結束，賠的時候合約一直持續。行情變差時銀行可能要求補<dfn data-term="保證金">保證金</dfn>，補不出來會被強制結清、立刻認賠。</dd>
+      <dt>能隨時拿回錢嗎</dt>
+      <dd>可以提前結束，但要一次付清當下的預估虧損，行情差時金額可能非常大。</dd>
+    </dl>
+    <footer>
+      <ul class="risk" aria-label="風險燈號（1 低 – 5 高）">
+        <li data-level="5">本金</li>
+        <li data-level="4">流動性</li>
+        <li data-level="2">發行機構倒閉</li>
+        <li data-level="5">匯率</li>
+        <li data-level="5">複雜度</li>
+      </ul>
+    </footer>
+  </article>
+
+  <h2 id="source">錢從哪裡來</h2>
+  <p>以 2014 年初常見的「賭人民幣升值」TRF 為例（數字為示意，實際以合約為準）：</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>條件</th><th>示意設定</th><th>白話</th></tr></thead>
+      <tbody>
+        <tr><td>當時匯率</td><td>1 美元 ≈ 6.05 人民幣</td><td>簽約當下的市場價格</td></tr>
+        <tr><td>約定匯率（<dfn data-term="履約價">履約價</dfn>）</td><td>6.20</td><td>每次結算，你用 6.20 把美元換成人民幣，比市場好</td></tr>
+        <tr><td>每次金額（<dfn data-term="名目本金">名目本金</dfn>）</td><td>10 萬美元</td><td>對你有利時，按這個金額算</td></tr>
+        <tr><td>對你不利時</td><td>20 萬美元（兩倍）</td><td>匯率超過 6.20，你要用兩倍金額賠差價</td></tr>
+        <tr><td>獲利上限（目標）</td><td>累計每 1 美元賺 0.30 人民幣</td><td>賺到這個數字，合約提早結束</td></tr>
+        <tr><td>期間</td><td>24 個月，每月結算</td><td>沒賺到目標就一直走到最後</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ol class="steps">
+    <li><strong>對你有利的那一邊</strong><br>只要匯率低於 6.20（人民幣比較強），每月賺 (6.20 − 市場匯率) × 10 萬美元。例如市場 6.05，一個月賺 1.5 萬人民幣（約 NT$7 萬）。</li>
+    <li><strong>賺夠就停</strong><br>累計賺到每 1 美元 0.30 人民幣（總共約 3 萬人民幣、約 NT$15 萬），合約就結束。好運最多只到這裡。</li>
+    <li><strong>對你不利的那一邊</strong><br>只要匯率高於 6.20（人民幣貶值），每月賠 (市場匯率 − 6.20) × <strong>20 萬美元</strong>。早期合約這一邊沒有「賠夠就停」；2015 年 6 月起規定要設最大損失上限，但上限通常仍遠高於獲利上限。</li>
+  </ol>
+  <div class="callout">
+    <strong>用保險來比喻</strong>
+    <p>那個「比市場好的 6.20」不是銀行送的。你等於每個月都賣一份「人民幣貶值保險」給銀行，而且是加倍賣；換來的保費就藏在那個比較好的匯率裡。保費收得不多，理賠卻可能很大：早期合約沒有上限，2015 年 6 月後的合約雖有最大損失上限，通常仍是本金或權利金的好幾倍。</p>
+  </div>
+
+  <h2 id="bank">銀行賺多少</h2>
+  <p>TRF 不會另外列手續費，成本藏在合約條件裡。簽約當下，用市場價格估算，這份合約對你的價值通常已經是負的，那個差額就是銀行的收入。</p>
+  <p class="small muted">常見範圍，實際以合約與銀行揭露為準。</p>
+  <div class="fees">
+    <div class="fee"><span>合約隱含利潤</span><div class="bar" style="--w:45%"></div><span class="val">名目本金的一小部分，不易看出</span></div>
+    <div class="fee"><span>保證金追繳</span><div class="bar" style="--w:70%"></div><span class="val">行情變差時要補錢</span></div>
+    <div class="fee"><span>提前結束費用</span><div class="bar" style="--w:95%"></div><span class="val">一次付清剩餘預估虧損</span></div>
+  </div>
+
+  <h2 id="cases">最好、普通、最壞</h2>
+  <p>用上面的示意合約（人民幣換新台幣以約 4.7–4.9 計算，四捨五入）：</p>
+  <div class="scenarios">
+    <div class="scenario best">
+      <h4>最好：人民幣持續強勢</h4>
+      <p class="big">約 +NT$15 萬</p>
+      <p>前兩三個月就賺到獲利上限，合約提早結束。這也是當年許多人「先嚐到甜頭」的經驗。</p>
+    </div>
+    <div class="scenario mid">
+      <h4>普通：人民幣小貶到 6.27 左右</h4>
+      <p class="big">約 −NT$80 萬（一年）</p>
+      <p>每月賠 0.07 × 20 萬美元 ≈ 1.4 萬人民幣（約 NT$6.7 萬），沒有賺到目標，合約一直不會結束。</p>
+    </div>
+    <div class="scenario worst">
+      <h4>最壞：人民幣貶到 6.9</h4>
+      <p class="big">超過 −NT$1,000 萬</p>
+      <p>每月賠 0.70 × 20 萬美元 = 14 萬人民幣（約 NT$65 萬），若剩下 20 期都在這個價位，累計虧損約 NT$1,300 萬，是獲利上限的八十多倍。這是 2015 年以前、沒有最大損失上限的合約；之後的合約會在上限處停損，但上限通常仍是本金或權利金的好幾倍。</p>
+    </div>
+  </div>
+  <p class="small muted">示意計算，未計保證金利息、提前結束費用與稅。2016 年底人民幣兌美元確實曾接近 6.9。</p>
+
+  <h2 id="stress">壓力測試</h2>
+  <p>下面用真實的美元兌人民幣月資料，模擬一份 TRF 從你選的月份開始逐月結算。2014 年初簽約的人，如果很快賺到上限就能全身而退；但若之後才簽、或條件比較緊，2015 年 8 月人民幣突然貶值後，每個月都是加倍虧損。</p>
+  <p>請特別注意圖上累計損益的形狀：上去很慢、有天花板；下去很快，地板很深（早期合約甚至沒有地板）。</p>
+  <div class="stress" data-product="trf" data-scenario="cny2015"></div>
+  <p>想調整約定匯率、獲利上限、起始月份，請到 <a href="../tools/stress-test.html">壓力測試工具</a>。</p>
+
+  <h2 id="diy">替代方案</h2>
+  <div class="callout warn">
+    <strong>一般人不建議自組 TRF</strong>
+    <p>TRF 本身就是用選擇權組成的高風險合約，自己拼一個出來，風險一樣。如果你只是看好某個貨幣，不需要用加倍虧損的合約來表達看法。</p>
+  </div>
+  <p>如果你<strong>真的有匯率避險需求</strong>（例如公司每月要付人民幣貨款），常見更單純的做法：</p>
+  <ol class="steps">
+    <li><strong>一般遠期合約</strong><br>跟銀行約好未來某天用固定匯率換一筆固定金額。賺賠都是一比一，沒有加倍，也沒有獲利上限造成的不對稱。</li>
+    <li><strong>只避實際需要的金額</strong><br>先算清楚未來一年真正要付或要收多少外幣，避險金額不超過這個數字。</li>
+    <li><strong>分批換匯</strong><br>個人需求（留學、旅遊、置產）可以分幾次換，降低買在最差時點的機率。</li>
+  </ol>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th></th><th>一般遠期合約</th><th>TRF</th></tr></thead>
+      <tbody>
+        <tr><td>匯率對你有利時</td><td>照約定金額賺</td><td>賺到上限就結束</td></tr>
+        <tr><td>匯率對你不利時</td><td>照約定金額賠</td><td><strong>兩倍金額賠</strong>，直到合約結束</td></tr>
+        <tr><td>看得懂嗎</td><td>容易</td><td>困難</td></tr>
+        <tr><td>適合誰</td><td>有真實外匯收支的人</td><td>幾乎只適合有專業財務人員、能承受大額虧損的機構</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small muted">一般遠期合約也有風險：如果匯率往有利你的方向走，你一樣要用約定價格換，會「少賺」。它的好處是透明、對稱。</p>
+
+  <h2 id="ask">問理專的問題</h2>
+  <ol class="qa">
+    <li>
+      <span class="q">這份合約我最多可能賠多少？請給我具體金額。</span>
+      <span class="ok">算出極端情況（例如匯率大幅變動）的具體虧損，並寫在書面上。</span>
+      <span class="bad">「匯率不會變那麼多。」或「理論上有，但不會發生。」</span>
+    </li>
+    <li>
+      <span class="q">我賺的時候上限多少？賠的時候是幾倍金額？</span>
+      <span class="ok">清楚說出獲利上限與虧損倍數，承認兩邊不對稱。</span>
+      <span class="bad">只講每月可以賺多少，不提加倍虧損。</span>
+    </li>
+    <li>
+      <span class="q">行情變差時要不要補保證金？補不出來會怎樣？</span>
+      <span class="ok">說明追繳條件、期限，以及強制結清的規則。</span>
+      <span class="bad">「我們給你額度，不用押錢。」額度不代表不用賠。</span>
+    </li>
+    <li>
+      <span class="q">我實際的外匯需求是多少？這份合約金額有沒有超過？</span>
+      <span class="ok">先了解你的真實收支，合約金額不超過需求。</span>
+      <span class="bad">沒問你的需求，直接推薦金額。</span>
+    </li>
+    <li>
+      <span class="q">簽約當下，這份合約對我的市場價值是多少？</span>
+      <span class="ok">提供評價數字，並說明其中包含銀行收入。</span>
+      <span class="bad">「這是零成本商品。」</span>
+    </li>
+    <li>
+      <span class="q">想提前結束，費用怎麼算？</span>
+      <span class="ok">說明是用當下市場評價結算，並舉例在不利行情下的金額。</span>
+      <span class="bad">「賺到目標就自動結束，不需要提前結束。」</span>
+    </li>
+    <li>
+      <span class="q">為什麼你們認為我適合這個商品？我被歸為專業投資人後，少了哪些保護？</span>
+      <span class="ok">說明適合度評估的依據，並逐項列出差異。</span>
+      <span class="bad">幫你勾選資格、催促簽名。</span>
+    </li>
+  </ol>
+  <p>更多通用問題請看 <a href="../questions.html">完整問理專清單</a>（可列印）。</p>
+
+  <h2 id="fit">可能適合誰／不適合誰</h2>
+  <div class="scenarios">
+    <div class="scenario best">
+      <h4>可能適合</h4>
+      <ul>
+        <li>有穩定、真實外匯收支的企業，並有專業財務人員能每天評估合約價值。</li>
+        <li>能承受遠超過預期獲利的虧損，且合約金額不超過實際需求。</li>
+        <li>即使如此，多數情況一般遠期合約就足夠。</li>
+      </ul>
+    </div>
+    <div class="scenario worst">
+      <h4>不適合</h4>
+      <ul>
+        <li>沒有實際外匯需求、只是想「賺匯差」的個人。</li>
+        <li>無法每天追蹤匯率與合約價值的人。</li>
+        <li>承受不了虧損超過本金的人。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 id="sources">出處</h2>
+  <ul class="sources">
+    <li>金融監督管理委員會，2015 年 6 月起要求複雜性高風險衍生性商品（含 TRF）設定最大損失上限，並於 2016 年 1 月 30 日修正銀行辦理衍生性金融商品業務管理辦法；整理見理律法律事務所電子報：<a href="https://www.leeandli.com/TW/Newsletters/5582.htm">https://www.leeandli.com/TW/Newsletters/5582.htm</a>。</li>
+    <li>金融監督管理委員會，《銀行辦理衍生性金融商品業務內部作業制度及程序管理辦法》。</li>
+    <li>中華民國銀行商業同業公會全國聯合會，銀行辦理衍生性金融商品自律規範。</li>
+    <li>財團法人金融消費評議中心，衍生性金融商品相關申訴與評議案例說明。</li>
+    <li>美國聯準會 H.10 匯率資料（經 FRED 整理，序列 EXCHUS：1 美元兌人民幣），用於本頁壓力測試。</li>
+    <li>John C. Hull，<i>Options, Futures, and Other Derivatives</i>，遠期合約與奇異選擇權章節。</li>
+  </ul>
+  <p class="disclaimer">本頁數字為示意計算，不代表任何特定合約。本站僅供教育，不是投資建議。</p>
+</main>
+
+<footer class="site-footer"><div class="inner">
+  <p><strong>本站僅供教育，不是投資建議。</strong>不推薦任何金融機構或個別商品，也不收費、不放廣告。內容可能有錯，請以商品公開說明書、保單條款與主管機關公告為準，重大決定前可諮詢無利益關係的專業人士。</p>
+  <p>文字內容採 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hant">CC BY-SA 4.0</a>，程式碼採 MIT 授權。<a href="../about.html">關於本站與如何參與</a></p>
+</div></footer>
+<script type="module" src="../assets/site.js"></script>
+<script type="module" src="../assets/engine/stress.js"></script>
+</body>
+</html>

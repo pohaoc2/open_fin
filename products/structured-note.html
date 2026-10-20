@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>連動債／保本型結構型商品｜看懂再買</title>
+<meta name="description" content="白話拆解連動債與保本型結構型商品：其實是「零息債 + 買權」，保本只保發行機構不倒、且要放到到期。">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="site-header"><div class="inner">
+  <a class="brand" href="../index.html">看懂<span>再買</span></a>
+  <nav class="site-nav" aria-label="主選單">
+    <a href="../products/index.html">產品拆解</a>
+    <a href="../tools/index.html">壓力測試與試算</a>
+    <a href="../learn/index.html">基礎課</a>
+    <a href="../questions.html">問理專清單</a>
+    <a href="../cases.html">真實案例</a>
+    <a href="../glossary.html">白話詞彙</a>
+    <a href="../about.html">關於</a>
+  </nav>
+  <button class="theme-toggle" type="button" aria-label="切換深淺色">◐</button>
+</div></header>
+
+<main>
+  <p class="breadcrumb"><a href="../index.html">首頁</a> › <a href="index.html">產品拆解</a> › 連動債／保本型商品</p>
+  <h1>連動債／保本型結構型商品</h1>
+  <p class="lead">把大部分的錢拿去買「到期一定還本」的債券，剩下的一小部分買「漲了才有賺」的彩券。保本的前提是：賣你的那家金融機構不能倒，而且你要放到到期。</p>
+
+  <nav class="toc" aria-label="本頁目錄"><strong>本頁目錄</strong>
+    <ol>
+      <li><a href="#card">白話拆解卡</a></li>
+      <li><a href="#source">錢從哪裡來</a></li>
+      <li><a href="#fees">銀行賺多少</a></li>
+      <li><a href="#scenarios">最好、普通、最壞</a></li>
+      <li><a href="#stress">壓力測試</a></li>
+      <li><a href="#diy">自己組一個</a></li>
+      <li><a href="#ask">該問理專的問題</a></li>
+      <li><a href="#fit">可能適合誰</a></li>
+      <li><a href="#sources">出處</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="card">白話拆解卡</h2>
+  <article class="breakdown">
+    <header>連動債（保本型結構型商品）</header>
+    <dl>
+      <dt>你以為</dt>
+      <dd>「保本，又有機會賺到股市的漲幅」，好像只有好處沒有壞處。</dd>
+      <dt>實際上</dt>
+      <dd>你買了兩樣東西：一張<dfn data-term="零息債">到期才一次還錢的債券</dfn>，加上一張<dfn data-term="買權">漲價彩券</dfn>。兩樣都是同一家<dfn data-term="發行機構">發行機構</dfn>給你的承諾。</dd>
+      <dt>報酬從哪來</dt>
+      <dd>債券到期還你本金；彩券在指數（或股票、利率、商品）上漲時，按約定比例分你一部分漲幅。</dd>
+      <dt>最慘情況</dt>
+      <dd>發行機構倒閉。債券和彩券都只是它的承諾，倒了就可能拿不回大部分的錢。2008 年雷曼兄弟倒閉時就發生過。</dd>
+      <dt>銀行賺什麼</dt>
+      <dd>商品賣你的價格，比它真正的<dfn data-term="合理價">合理價</dfn>高一截。差額由發行機構和銷售銀行分掉，你通常看不到。</dd>
+      <dt>隱藏陷阱</dt>
+      <dd>「保本」只保到期、只保發行機構不倒、而且常常只保 90%～100%。漲幅分給你的比例（<dfn data-term="參與率">參與率</dfn>）常常不到一半，還可能設上限。</dd>
+      <dt>能隨時拿回錢嗎</dt>
+      <dd>很難。中途想賣，只能賣回給發行機構或銀行，價格由他們報，常常低於本金。</dd>
+    </dl>
+    <footer>
+      <ul class="risk" aria-label="風險燈號（1 低 ～ 5 高）">
+        <li data-level="2">本金</li>
+        <li data-level="4">流動性</li>
+        <li data-level="4">發行機構倒閉</li>
+        <li data-level="3">匯率</li>
+        <li data-level="3">複雜度</li>
+      </ul>
+      <p class="small muted">本金燈號假設持有到期且發行機構不倒；匯率燈號視計價幣別而定，台幣計價可降為 1。</p>
+    </footer>
+  </article>
+
+  <h2 id="source">錢從哪裡來</h2>
+  <p>以 NT$100 萬、5 年期、標榜「到期 100% 保本」的商品舉例。假設當時 5 年期利率約 3%（只是舉例好算）：</p>
+  <ol class="steps">
+    <li><strong>先買零息債：約 86 萬。</strong>零息債現在用比較少的錢買，5 年後變成 100 萬。利率 3% 時，5 年後的 100 萬，現在大約值 86 萬。這部分負責「保本」。</li>
+    <li><strong>剩下約 14 萬，先扣費用。</strong>發行機構的利潤、避險成本（發行機構為了自己不賠錢所做的保護）、銷售銀行的通路報酬，都從這裡拿。假設拿走 3～4 萬（實際多少你通常看不到）。</li>
+    <li><strong>最後約 10 萬買彩券。</strong>用這筆錢買指數的<dfn data-term="買權">買權</dfn>。能買多少，決定了你分到漲幅的比例。</li>
+  </ol>
+  <div class="callout">
+    <strong>重點：利率越低，保本越貴，能買的彩券越少。</strong>
+    <p>如果利率只有 1%，保本要先放約 95 萬，只剩 5 萬可以扣費用加買彩券，參與率就會很低。所以利率低的時候，業者常改成「90% 保本」或「設漲幅上限」來讓商品看起來好看。</p>
+  </div>
+  <p>你會發現：<strong>這兩樣東西你自己都買得到</strong>（定存或公債、指數 ETF），而且自己買可以省掉中間那層費用。見下方「<a href="#diy">自己組一個</a>」。</p>
+
+  <h2 id="fees">銀行和發行機構賺多少</h2>
+  <p>結構型商品的費用通常不會用「每年幾 %」寫出來，而是藏在<strong>賣價</strong>和<strong>合理價</strong>的差距裡。以下是常見的費用來源，數字只是常見範圍的示意，<strong>實際以商品說明書為準</strong>：</p>
+  <div class="fees" role="list">
+    <div class="fee" role="listitem"><span>發行機構利潤與避險成本</span><span class="bar" style="--w:30%"></span><span class="val">約 1–3%</span></div>
+    <div class="fee" role="listitem"><span>銷售銀行通路報酬</span><span class="bar" style="--w:25%"></span><span class="val">約 1–2%</span></div>
+    <div class="fee" role="listitem"><span>信託管理費（若透過<dfn data-term="特定金錢信託">信託</dfn>購買）</span><span class="bar" style="--w:8%"></span><span class="val">每年約 0.2%</span></div>
+    <div class="fee" role="listitem"><span>提前贖回的價差</span><span class="bar" style="--w:40%"></span><span class="val">視市況</span></div>
+  </div>
+  <p class="small muted">常見範圍，實際以商品說明書與銀行揭露為準。可以直接問理專：「這檔商品的發行價和合理價差多少？銀行拿多少通路報酬？」你有權要求銀行用書面說明它收了多少通路報酬（揭露方式以主管機關現行規定為準）。</p>
+
+  <h2 id="scenarios">最好、普通、最壞</h2>
+  <p>同一個例子：NT$100 萬，5 年，100% 保本，參與率 50%，連結某股價指數。</p>
+  <div class="scenarios">
+    <div class="scenario best">
+      <h4>最好：指數 5 年漲 60%</h4>
+      <p class="big">約 130 萬</p>
+      <p>本金 100 萬 + 漲幅 60% × 參與率 50%。看起來不錯，但直接買指數 ETF 大約是 160 萬，再加上這 5 年的股息。</p>
+    </div>
+    <div class="scenario mid">
+      <h4>普通：指數 5 年持平或下跌</h4>
+      <p class="big">100 萬</p>
+      <p>拿回本金，但 5 年沒有利息。同期放定存或買公債，可能已經多 10 幾萬。這就是保本的「隱形成本」。</p>
+    </div>
+    <div class="scenario worst">
+      <h4>最壞：發行機構倒閉</h4>
+      <p class="big">可能剩不到一半</p>
+      <p>保本承諾跟著失效，只能等破產清算分配，可能拖很多年，拿回多少沒人能保證。如果是外幣計價，還要再加上匯率損失。</p>
+    </div>
+  </div>
+
+  <h2 id="stress">壓力測試：放進 2008 年金融海嘯</h2>
+  <p>下面用真實的歷史股價重跑一次。你可以切換情境，打開「發行機構倒閉」開關，看看保本商品、自己組合、直接買指數、放現金四條線的差別。</p>
+  <div class="stress" data-product="pp-note" data-scenario="gfc"></div>
+  <script type="module" src="../assets/engine/stress.js"></script>
+  <div class="callout warn">
+    <strong>看圖時注意兩件事</strong>
+    <ul>
+      <li><strong>發行機構沒倒時</strong>：保本商品在股災中很安穩，這是它真正的優點。但股市反彈時，它也只分到一部分漲幅。</li>
+      <li><strong>發行機構倒閉時</strong>：保本瞬間消失。2008 年很多人以為自己買的是「保本」，最後才發現保本是發行機構的承諾，而不是政府或銀行的保證。</li>
+    </ul>
+  </div>
+  <p>想試更多情境與參數，請到<a href="../tools/stress-test.html">壓力測試工具</a>。</p>
+
+  <h2 id="diy">自己組一個：債券或定存 + 少量指數 ETF</h2>
+  <p>保本型商品的結構很簡單，你可以自己做出類似效果，而且錢分散在不同地方：</p>
+  <ol class="steps">
+    <li><strong>算出保本要放多少。</strong>假設想要 5 年後至少拿回 100 萬，用目前的定存或公債利率回推。例如利率 3%，約 86 萬放進定存或短期公債（或公債 ETF），5 年後大約回到 100 萬。</li>
+    <li><strong>剩下的錢買低成本指數 ETF。</strong>剩下約 14 萬買大盤指數 ETF。就算到期時股市剛好跌一半，ETF 只剩約 7 萬，加上定存回到的 100 萬，整體仍有約 107 萬。</li>
+    <li><strong>（進階）用買權取代 ETF。</strong>熟悉選擇權的人，可以用剩下的錢買指數的長天期買權，效果更接近原商品。大多數人用 ETF 就夠，也比較好懂。</li>
+    <li><strong>放著別動，到期再看。</strong>不要因為股市漲就把定存的錢挪去買股票，也不要因為跌就賣掉 ETF。</li>
+  </ol>
+  <div class="callout good">
+    <strong>自組的好處</strong>
+    <p>定存有<dfn data-term="存款保險">存款保險</dfn>（有額度上限）；ETF 的資產跟發行公司分開保管。不會因為一家金融機構倒閉就全部消失。另外沒有隱藏的通路費，ETF 隨時可以賣。</p>
+  </div>
+  <div class="callout warn">
+    <strong>自組的缺點，老實說</strong>
+    <ul>
+      <li>要自己算、自己下單、自己忍住不亂動。很多人做不到，這是真實的成本。</li>
+      <li>ETF 中途可以賣，反而容易在大跌時恐慌賣出，失去「到期保本」的效果。</li>
+      <li>定存的存款保險有上限；公債 ETF 不保本，利率上升時價格會跌（但持有個別公債到期仍會還本）。</li>
+      <li>如果你需要的是某種特殊標的（例如商品、利率）的報酬，自己可能買不到相同的東西。</li>
+    </ul>
+  </div>
+
+  <h2 id="ask">該問理專的問題</h2>
+  <p>完整清單見<a href="../questions.html">問理專清單</a>。以下是針對這類商品最重要的幾題：</p>
+  <ol class="qa">
+    <li><span class="q">發行機構是誰？它的信用評等（評等機構給它的「還錢能力分數」）是多少？如果它倒了，我會怎樣？</span>
+      <span class="ok">直接說出發行機構名稱和評等，並坦白說「倒了保本就失效，要等清算」。</span>
+      <span class="bad">「這是大銀行，不會倒」「我們銀行會負責」。雷曼兄弟倒閉前也是美國的大型投資銀行。</span></li>
+    <li><span class="q">保本是保多少 %？要放到到期才保嗎？中途贖回會拿回多少？</span>
+      <span class="ok">清楚說明保本率、到期日，並給你中途贖回的參考報價或計算方式。</span>
+      <span class="bad">「保本啦」「放著就好」，講不出中途贖回可能虧多少。</span></li>
+    <li><span class="q">參與率是多少？漲幅有沒有上限？</span>
+      <span class="ok">用具體例子說明：指數漲 50% 時你實際拿到多少。</span>
+      <span class="bad">只講「最高可以拿到 XX%」，不講要漲多少才拿得到。</span></li>
+    <li><span class="q">這檔的發行價和合理價差多少？銀行拿多少通路報酬？</span>
+      <span class="ok">給你書面揭露的數字。</span>
+      <span class="bad">「沒有手續費喔」。沒有寫出來不代表沒有成本。</span></li>
+    <li><span class="q">用什麼幣別計價？到期換回台幣，匯率變動誰承擔？</span>
+      <span class="ok">說明外幣計價時，保本只保外幣金額，換回台幣可能虧損。</span>
+      <span class="bad">只說保本，沒提匯率。</span></li>
+    <li><span class="q">如果我把一部分放定存、一部分自己買指數 ETF，跟這個商品比起來差在哪？</span>
+      <span class="ok">願意幫你並排比較，承認自組也是選項。</span>
+      <span class="bad">迴避問題，或說「自己買風險很高」卻講不出具體理由。</span></li>
+    <li><span class="q">可以給我商品說明書和風險預告書，讓我帶回家看完再決定嗎？</span>
+      <span class="ok">馬上給，並提醒你重點頁數。</span>
+      <span class="bad">「今天是最後一天」「額度快滿了」催你當場簽。</span></li>
+  </ol>
+
+  <h2 id="fit">可能適合誰／不適合誰</h2>
+  <div class="scenarios">
+    <div class="scenario best">
+      <h4>可能適合</h4>
+      <ul>
+        <li>確定 5 年內完全不會用到這筆錢。</li>
+        <li>非常怕看到帳面虧損，寧可少賺也要有「到期還本」的結構。</li>
+        <li>了解並接受發行機構倒閉的風險，也查過它的信用。</li>
+        <li>知道自己沒辦法紀律地執行自組方法。</li>
+      </ul>
+    </div>
+    <div class="scenario worst">
+      <h4>不太適合</h4>
+      <ul>
+        <li>中途可能需要用錢。</li>
+        <li>以為「保本＝不會虧」，沒想過發行機構倒閉或匯率損失。</li>
+        <li>願意自己動手，用定存加 ETF 就能做到類似效果的人。</li>
+        <li>把大部分積蓄放在同一家發行機構的商品上。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 id="sources">出處</h2>
+  <ul class="sources">
+    <li>金融監督管理委員會（結構型商品相關法規與公告）：<a href="https://www.fsc.gov.tw">https://www.fsc.gov.tw</a></li>
+    <li>全國法規資料庫：「境外結構型商品管理規則」，2009 年 7 月 23 日訂定發布，之後多次修正：<a href="https://law.moj.gov.tw">https://law.moj.gov.tw</a>（以資料庫內最新條文為準）</li>
+    <li>金融消費評議中心（金融消費爭議申訴）：<a href="https://www.foi.org.tw">https://www.foi.org.tw</a></li>
+    <li>中央存款保險公司（存款保險保障範圍與額度）：<a href="https://www.cdic.gov.tw">https://www.cdic.gov.tw</a>。銀行的商品說明也會註明境外結構型商品、組合式商品不在存款保險保障範圍內，例如<a href="https://www.fubon.com/banking/personal/fund_trust/structured_product/structured_product.htm">台北富邦銀行結構型商品說明頁</a>。</li>
+    <li>雷曼兄弟（維基百科條目，2008 年破產背景）：<a href="https://zh.wikipedia.org/wiki/雷曼兄弟">https://zh.wikipedia.org/wiki/雷曼兄弟</a></li>
+    <li>本站<a href="../cases.html">真實案例</a>：2008 年雷曼連動債。2008 年 9 月 15 日雷曼兄弟聲請破產，造成台灣數萬名連動債投資人損失；2009 年主管機關訂定「境外結構型商品管理規則」，之後持續修正（<a href="https://www.cna.com.tw/news/afe/201611150425.aspx">中央社 2016 年報導</a>）。</li>
+    <li>本頁數字（利率 3%、參與率 50%、費用範圍）皆為教學用假設，不代表任何特定商品。</li>
+  </ul>
+</main>
+
+<footer class="site-footer"><div class="inner">
+  <p><strong>本站僅供教育，不是投資建議。</strong>不推薦任何金融機構或個別商品，也不收費、不放廣告。內容可能有錯，請以商品公開說明書、保單條款與主管機關公告為準，重大決定前可諮詢無利益關係的專業人士。</p>
+  <p>文字內容採 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hant">CC BY-SA 4.0</a>，程式碼採 MIT 授權。<a href="../about.html">關於本站與如何參與</a></p>
+</div></footer>
+<script type="module" src="../assets/site.js"></script>
+</body>
+</html>

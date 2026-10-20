@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>投資型保單費用試算｜看懂再買</title>
+<meta name="description" content="輸入保費與各項費用，看投資型保單和「定期險＋低成本指數基金」長期差多少。">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/engine/stress.css">
+</head>
+<body>
+<header class="site-header"><div class="inner">
+  <a class="brand" href="../index.html">看懂<span>再買</span></a>
+  <nav class="site-nav" aria-label="主選單">
+    <a href="../products/index.html">產品拆解</a>
+    <a href="../tools/index.html">壓力測試與試算</a>
+    <a href="../learn/index.html">基礎課</a>
+    <a href="../questions.html">問理專清單</a>
+    <a href="../cases.html">真實案例</a>
+    <a href="../glossary.html">白話詞彙</a>
+    <a href="../about.html">關於</a>
+  </nav>
+  <button class="theme-toggle" type="button" aria-label="切換深淺色">◐</button>
+</div></header>
+
+<main>
+  <p class="breadcrumb"><a href="../index.html">首頁</a> › <a href="index.html">壓力測試與試算</a> › 投資型保單費用試算</p>
+  <h1>投資型保單費用試算</h1>
+  <p class="lead">同樣的錢、同樣的投資報酬，只差在費用。算算看 20 年下來，費用會吃掉多少。</p>
+
+  <div class="callout">
+    <strong>怎麼用</strong>
+    <p>先選一個範例，再照你手上保單的「費用表」修改數字。費用表通常在保單條款或商品說明書的「費用揭露」那一頁。不知道的數字，可以直接問業務員，或參考<a href="../questions.html">問理專清單</a>。</p>
+  </div>
+
+  <div class="controls" id="form">
+    <label>範例
+      <select id="preset">
+        <option value="front">一般投資型保單（前置費用逐年遞減）</option>
+        <option value="low">低前置費用（每年 3%）</option>
+        <option value="discretionary">類全委保單（代操）</option>
+        <option value="custom">自己輸入</option>
+      </select>
+    </label>
+    <label>每年繳（萬元）<input type="number" id="premium" min="1" step="1" value="10" inputmode="decimal"></label>
+    <label>繳幾年<input type="number" id="years" min="1" max="40" step="1" value="20" inputmode="numeric"></label>
+    <label>假設每年投資報酬（%）<input type="number" id="ret" min="-10" max="20" step="0.5" value="6" inputmode="decimal"><span class="hint muted small">費用扣除前，兩邊一樣</span></label>
+    <label>第 1 年前置費用（% 保費）<input type="number" class="load" data-y="0" min="0" max="100" step="1" inputmode="decimal"></label>
+    <label>第 2 年前置費用（%）<input type="number" class="load" data-y="1" min="0" max="100" step="1" inputmode="decimal"></label>
+    <label>第 3 年前置費用（%）<input type="number" class="load" data-y="2" min="0" max="100" step="1" inputmode="decimal"></label>
+    <label>第 4 年前置費用（%）<input type="number" class="load" data-y="3" min="0" max="100" step="1" inputmode="decimal"></label>
+    <label>第 5 年起前置費用（%）<input type="number" class="load" data-y="4" min="0" max="100" step="1" inputmode="decimal"></label>
+    <label>保單管理費（每月 元）<input type="number" id="admin" min="0" step="10" inputmode="decimal"></label>
+    <label>基金內扣費用（每年 %）<input type="number" id="fund" min="0" max="5" step="0.1" inputmode="decimal"></label>
+    <label>帳戶管理費／代操費（每年 %）<input type="number" id="wrap" min="0" max="5" step="0.1" inputmode="decimal"></label>
+    <label>自組：指數 ETF 內扣（每年 %）<input type="number" id="diy" min="0" max="2" step="0.05" value="0.1" inputmode="decimal"></label>
+  </div>
+
+  <div class="stress-verdict" id="verdict" role="status" aria-live="polite"></div>
+  <div class="scenarios" id="totals"></div>
+
+  <h2>費用一共吃掉多少</h2>
+  <p class="muted small">各項費用累計金額（萬元）。長條越長，代表這一項吃掉越多。</p>
+  <div class="fees" id="fees"></div>
+
+  <h2>帳戶價值隨時間變化</h2>
+  <div id="chart"></div>
+
+  <details>
+    <summary>這個試算簡化了什麼？</summary>
+    <ul>
+      <li>兩邊假設每年報酬完全一樣，只差在費用。實際上保單可選的基金有限，不一定有低成本指數基金。</li>
+      <li>保障成本（危險保費）兩邊視為一樣，都沒有扣。投資型保單的危險保費會隨年齡上升、從帳戶裡扣；自組則是另外買定期壽險。</li>
+      <li>範例的前置費用是示意：很多保單依「基本保費」在前幾年收高比例（例如第 1 年 60%、第 2 年 40%，逐年遞減到第 5–6 年為 0）；「超額保費」通常只收較低比例（例如 3–5%）。這裡把全部保費都當成同一種費率，請以你的保單條款為準。</li>
+      <li>「第 5 年起」的前置費用會一直套用到最後一年。</li>
+      <li>沒有計入解約費用。很多保單前幾年解約要另外扣一筆。</li>
+      <li>類全委保單的「配息」可能來自你自己的本金，配息不等於賺錢。</li>
+      <li>沒有計入稅務與遺產規劃的差異，對部分人來說這是投資型保單的真實好處。</li>
+    </ul>
+  </details>
+  <p class="disclaimer">這是教育用的簡化試算，不是投資建議。範例費率只是示意，不代表任何特定保單，請以你的保單條款為準。</p>
+</main>
+
+<footer class="site-footer"><div class="inner">
+  <p><strong>本站僅供教育，不是投資建議。</strong>不推薦任何金融機構或個別商品，也不收費、不放廣告。內容可能有錯，請以商品公開說明書、保單條款與主管機關公告為準，重大決定前可諮詢無利益關係的專業人士。</p>
+  <p>文字內容採 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hant">CC BY-SA 4.0</a>，程式碼採 MIT 授權。<a href="../about.html">關於本站與如何參與</a></p>
+</div></footer>
+<script type="module" src="../assets/site.js"></script>
+<script type="module">
+import { ilp } from "../assets/engine/payoffs.js";
+import { lineChart } from "../assets/engine/charts.js";
+
+// 示意費率（不代表任何特定保單）：前置費用依「基本保費」前幾年收高比例、逐年遞減
+const PRESETS = {
+  front: { load: [60, 40, 20, 10, 0], admin: 100, fund: 1.5, wrap: 0 },
+  low: { load: [3, 3, 3, 3, 3], admin: 100, fund: 1.5, wrap: 0 },
+  discretionary: { load: [60, 40, 20, 10, 0], admin: 100, fund: 0.8, wrap: 1.2 },
+};
+const $ = (id) => document.getElementById(id);
+const loads = [...document.querySelectorAll(".load")];
+const wan = (v) => "NT$" + v.toFixed(1) + " 萬";
+const num = (el) => { const v = parseFloat(el.value); return isFinite(v) ? v : 0; };
+
+function applyPreset(k) {
+  const p = PRESETS[k];
+  if (!p) return;
+  loads.forEach((el, i) => (el.value = p.load[i]));
+  $("admin").value = p.admin; $("fund").value = p.fund; $("wrap").value = p.wrap;
+}
+
+let chart = null;
+function render() {
+  const years = Math.max(1, Math.min(40, Math.round(num($("years")))));
+  const r = num($("ret")) / 100;
+  const path = Array.from({ length: years * 12 + 1 }, (_, i) => Math.pow(1 + r, i / 12));
+  const ly = loads.map(num);
+  const frontLoad = Array.from({ length: years }, (_, y) => ly[Math.min(y, 4)]);
+  const res = ilp(path, {
+    years, premiumPa: num($("premium")), frontLoad,
+    adminFeePm: num($("admin")) / 10000, fundFeePa: num($("fund")), wrapperFeePa: num($("wrap")), diyFeePa: num($("diy")),
+  });
+  const n = res.months, f = res.feesPaid;
+  const gap = res.diy[n] - res.ilp[n];
+  $("verdict").textContent = `${years} 年共繳 ${wan(res.invested[n])}。投資型保單帳戶約 ${wan(res.ilp[n])}，自組約 ${wan(res.diy[n])}，差 ${wan(gap)}（約少了 ${(gap / res.diy[n] * 100).toFixed(0)}%）。`;
+  $("totals").innerHTML = "";
+  for (const [cls, title, v] of [["mid", "累計繳的錢", res.invested[n]], ["worst", "投資型保單帳戶", res.ilp[n]], ["best", "自組：定期險＋指數 ETF", res.diy[n]]]) {
+    const d = document.createElement("div");
+    d.className = "scenario " + cls;
+    d.innerHTML = `<h4></h4><div class="big"></div>`;
+    d.querySelector("h4").textContent = title;
+    d.querySelector(".big").textContent = wan(v);
+    $("totals").append(d);
+  }
+  const rows = [["前置費用", f.frontLoad], ["保單管理費", f.admin], ["基金內扣", f.fund], ["帳戶管理／代操費", f.wrapper], ["自組 ETF 內扣", f.diy]];
+  // 費用之外，被扣掉的錢也少了複利：差距 − 直接費用 = 少賺的複利
+  const lost = Math.max(0, gap - (f.frontLoad + f.admin + f.fund + f.wrapper - f.diy));
+  rows.push(["少賺的複利", lost]);
+  const max = Math.max(...rows.map((x) => x[1]), 1e-9);
+  $("fees").replaceChildren(...rows.map(([name, v]) => {
+    const row = document.createElement("div");
+    row.className = "fee";
+    row.innerHTML = `<span></span><div class="bar"></div><span class="val"></span>`;
+    row.children[0].textContent = name;
+    row.children[1].style.setProperty("--w", (v / max * 100).toFixed(1) + "%");
+    if (name.startsWith("自組")) row.children[1].style.background = "var(--good)";
+    if (name === "少賺的複利") row.children[1].style.background = "var(--chart-4)";
+    row.children[2].textContent = v.toFixed(1) + " 萬";
+    return row;
+  }));
+  const labels = Array.from({ length: n + 1 }, (_, i) => (i % 12 === 0 ? `第 ${i / 12} 年` : `第 ${Math.floor(i / 12)} 年 ${i % 12} 月`));
+  chart?.destroy();
+  chart = lineChart($("chart"), {
+    labels,
+    series: [
+      { name: "投資型保單帳戶", values: res.ilp, color: "var(--chart-1)" },
+      { name: "自組：定期險＋指數 ETF", values: res.diy, color: "var(--chart-3)" },
+      { name: "累計繳的錢", values: res.invested, color: "var(--chart-4)", dash: true },
+    ],
+    yFormat: (v) => v.toFixed(0) + " 萬",
+  });
+}
+
+$("preset").addEventListener("change", (e) => { applyPreset(e.target.value); render(); });
+$("form").addEventListener("input", (e) => { if (e.target.id !== "preset") $("preset").value = "custom"; render(); });
+applyPreset("front");
+render();
+</script>
+</body>
+</html>
