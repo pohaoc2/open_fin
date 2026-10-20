@@ -30,17 +30,49 @@
   <nav class="toc" aria-label="本頁目錄">
     <strong>本頁目錄</strong>
     <ol>
+      <li><a href="#cases">最好、普通、最壞</a></li>
+      <li><a href="#stress">壓力測試</a></li>
       <li><a href="#card">白話拆解卡</a></li>
       <li><a href="#source">錢從哪裡來</a></li>
       <li><a href="#bank">銀行賺多少</a></li>
-      <li><a href="#cases">最好、普通、最壞</a></li>
-      <li><a href="#stress">壓力測試</a></li>
       <li><a href="#diy">自組替代方案</a></li>
       <li><a href="#ask">問理專的問題</a></li>
       <li><a href="#fit">可能適合誰</a></li>
       <li><a href="#sources">出處</a></li>
     </ol>
   </nav>
+
+  <div class="callout warn">
+    <strong>一句話記住</strong>
+    <p>FCN 是「賺小錢的機率高、賠大錢的機率低但不是零」。標示的年息是<strong>最好情況的上限</strong>，不是保證報酬。</p>
+  </div>
+
+  <h2 id="cases">最好、普通、最壞</h2>
+  <p>以一張 NT$100 萬、一年期、年息 10%、<dfn data-term="敲入">敲入價</dfn> 60% 的 FCN 為例：</p>
+  <div class="scenarios">
+    <div class="scenario best">
+      <h4>最好：3 個月就提前出場</h4>
+      <p class="big">NT$102.5 萬</p>
+      <p>股票都漲，第 3 個月觸發<dfn data-term="敲出">提前出場</dfn>。拿回本金和 3 個月利息。看起來很好，但你得重新找地方放錢，下一檔的條件可能沒這麼好。</p>
+    </div>
+    <div class="scenario mid">
+      <h4>普通：平穩到期</h4>
+      <p class="big">NT$110 萬</p>
+      <p>一年內股票有漲有跌，但沒有一檔跌破 60%。領滿 12 個月利息，拿回本金。這是最常見、也是理專最常舉的例子。</p>
+    </div>
+    <div class="scenario worst">
+      <h4>最壞：一檔腰斬</h4>
+      <p class="big">約 NT$55 萬</p>
+      <p>三檔裡有一檔跌到起始價的 45%，到期沒漲回。你拿到這檔股票，市價只值約 NT$45 萬，加上已領的 NT$10 萬利息。<strong>其他兩檔漲再多也沒用。</strong></p>
+    </div>
+  </div>
+  <p class="small muted">示意計算：接股價格假設為起始價 100%，未計稅費、匯率與中途贖回。</p>
+
+  <h2 id="stress">壓力測試</h2>
+  <p>下面把一檔「連結美國大盤指數」的 FCN 丟進歷史危機重跑。真實的 FCN 通常連結好幾檔個股，個股比大盤更容易腰斬，所以<strong>真實結果通常比這裡更差</strong>。</p>
+  <p>2008 年金融海嘯時，大盤從高點跌了一半以上，幾乎所有在 2007 年下半年買的股票型 FCN 都會敲入，最後拿到大幅縮水的股票。你可以切換 2000 年網路泡沫、2020 年疫情等情境比較。</p>
+  <div class="stress" data-product="fcn" data-scenario="gfc"></div>
+  <p>想自己調整條件、換起始月份，請到 <a href="../tools/stress-test.html">壓力測試工具</a>。</p>
 
   <h2 id="card">白話拆解卡</h2>
   <article class="breakdown">
@@ -71,11 +103,6 @@
       </ul>
     </footer>
   </article>
-
-  <div class="callout warn">
-    <strong>一句話記住</strong>
-    <p>FCN 是「賺小錢的機率高、賠大錢的機率低但不是零」。標示的年息是<strong>最好情況的上限</strong>，不是保證報酬。</p>
-  </div>
 
   <h2 id="source">錢從哪裡來</h2>
   <p>假設你用 <strong>NT$100 萬</strong>買一檔常見條件的 FCN（以下數字為示意，實際以條款為準）：</p>
@@ -116,33 +143,6 @@
     <div class="fee"><span>換匯價差</span><div class="bar" style="--w:15%"></div><span class="val">約 0.1–0.5%／次</span></div>
   </div>
   <p>台灣的 FCN 多半透過<dfn data-term="特定金錢信託">特定金錢信託</dfn>買，且常限<dfn data-term="專業投資人">專業投資人</dfn>。一旦簽了專業投資人，部分對一般投資人的保護會變少，簽之前要先問清楚。</p>
-
-  <h2 id="cases">最好、普通、最壞</h2>
-  <p>同一張 NT$100 萬、一年期、年息 10%、敲入價 60% 的 FCN：</p>
-  <div class="scenarios">
-    <div class="scenario best">
-      <h4>最好：3 個月就提前出場</h4>
-      <p class="big">NT$102.5 萬</p>
-      <p>股票都漲，第 3 個月觸發提前出場。拿回本金和 3 個月利息。看起來很好，但你得重新找地方放錢，下一檔的條件可能沒這麼好。</p>
-    </div>
-    <div class="scenario mid">
-      <h4>普通：平穩到期</h4>
-      <p class="big">NT$110 萬</p>
-      <p>一年內股票有漲有跌，但沒有一檔跌破 60%。領滿 12 個月利息，拿回本金。這是最常見、也是理專最常舉的例子。</p>
-    </div>
-    <div class="scenario worst">
-      <h4>最壞：一檔腰斬</h4>
-      <p class="big">約 NT$55 萬</p>
-      <p>三檔裡有一檔跌到起始價的 45%，到期沒漲回。你拿到這檔股票，市價只值約 NT$45 萬，加上已領的 NT$10 萬利息。<strong>其他兩檔漲再多也沒用。</strong></p>
-    </div>
-  </div>
-  <p class="small muted">示意計算：接股價格假設為起始價 100%，未計稅費、匯率與中途贖回。</p>
-
-  <h2 id="stress">壓力測試</h2>
-  <p>下面把一檔「連結美國大盤指數」的 FCN 丟進歷史危機重跑。真實的 FCN 通常連結好幾檔個股，個股比大盤更容易腰斬，所以<strong>真實結果通常比這裡更差</strong>。</p>
-  <p>2008 年金融海嘯時，大盤從高點跌了一半以上，幾乎所有在 2007 年下半年買的股票型 FCN 都會敲入，最後拿到大幅縮水的股票。你可以切換 2000 年網路泡沫、2020 年疫情等情境比較。</p>
-  <div class="stress" data-product="fcn" data-scenario="gfc"></div>
-  <p>想自己調整條件、換起始月份，請到 <a href="../tools/stress-test.html">壓力測試工具</a>。</p>
 
   <h2 id="diy">自組替代方案</h2>
   <p>FCN 的核心是「拿現金擔保，賣股票下跌保險」。一般投資人可以用更透明的方式做出類似效果：</p>

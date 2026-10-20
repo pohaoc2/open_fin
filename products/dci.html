@@ -30,17 +30,49 @@
   <nav class="toc" aria-label="本頁目錄">
     <strong>本頁目錄</strong>
     <ol>
+      <li><a href="#cases">最好、普通、最壞</a></li>
+      <li><a href="#stress">壓力測試</a></li>
       <li><a href="#card">白話拆解卡</a></li>
       <li><a href="#source">錢從哪裡來</a></li>
       <li><a href="#bank">銀行賺多少</a></li>
-      <li><a href="#cases">最好、普通、最壞</a></li>
-      <li><a href="#stress">壓力測試</a></li>
       <li><a href="#diy">自組替代方案</a></li>
       <li><a href="#ask">問理專的問題</a></li>
       <li><a href="#fit">可能適合誰</a></li>
       <li><a href="#sources">出處</a></li>
     </ol>
   </nav>
+
+  <div class="callout warn">
+    <strong>一句話記住</strong>
+    <p>雙元貨幣不是「比較高利的定存」，而是「你答應在匯率變差時，用比較差的價格換錢」。拿到的高利息，就是答應這件事的報酬。</p>
+  </div>
+
+  <h2 id="cases">最好、普通、最壞</h2>
+  <p>NT$100 萬換成美元，一個月期、年化 8%、連結澳幣、<dfn data-term="轉換價">轉換價</dfn>比當時匯率低 1%（以新台幣等值表示，暫不計美元兌新台幣的變動）：</p>
+  <div class="scenarios">
+    <div class="scenario best">
+      <h4>最好：澳幣沒跌</h4>
+      <p class="big">約 NT$100.67 萬</p>
+      <p>到期澳幣在轉換價之上，拿回美元本金加利息。這是大多數月份的結果，所以很容易讓人覺得「很安全」。</p>
+    </div>
+    <div class="scenario mid">
+      <h4>普通：澳幣小跌 2%</h4>
+      <p class="big">約 NT$99.7 萬</p>
+      <p>跌破轉換價，你的美元被換成澳幣。加上利息，帳面小賠。但你現在手上是澳幣，想換回美元還要再付一次價差。</p>
+    </div>
+    <div class="scenario worst">
+      <h4>最壞：澳幣一個月跌 15%</h4>
+      <p class="big">約 NT$86.5 萬</p>
+      <p>2008 年 10 月就發生過類似跌幅。你用跌之前的價格換到澳幣，馬上少了一成多。之後若繼續續做，可能越陷越深。</p>
+    </div>
+  </div>
+  <p class="small muted">示意計算：最壞情況 = 100 萬 × (0.85 ÷ 0.99) + 利息。未計換匯價差與稅。若你的生活是用新台幣，還要另外承擔美元兌新台幣的<dfn data-term="匯率風險">匯率風險</dfn>。</p>
+
+  <h2 id="stress">壓力測試</h2>
+  <p>下面模擬「每個月都做一次一個月期的澳幣雙元貨幣」。若被換成澳幣，下一期就做反向的雙元貨幣，試著換回美元。這是很多人實際的操作方式。</p>
+  <p>2008 年 7 月到 2009 年初，澳幣兌美元跌了三成以上。滾動續做的人在前面幾個月穩穩領利息，接著幾乎全部資金被換成澳幣，帳面虧損遠超過一整年的利息。你可以切換其他情境比較。</p>
+  <div class="stress" data-product="dci" data-scenario="gfc"></div>
+  <p>想自己調整利率、轉換價距離、起始月份，請到 <a href="../tools/stress-test.html">壓力測試工具</a>。</p>
 
   <h2 id="card">白話拆解卡</h2>
   <article class="breakdown">
@@ -71,11 +103,6 @@
       </ul>
     </footer>
   </article>
-
-  <div class="callout warn">
-    <strong>一句話記住</strong>
-    <p>雙元貨幣不是「比較高利的定存」，而是「你答應在匯率變差時，用比較差的價格換錢」。拿到的高利息，就是答應這件事的報酬。</p>
-  </div>
 
   <h2 id="source">錢從哪裡來</h2>
   <p>假設你把 <strong>NT$100 萬</strong>換成美元（約 3 萬多美元），做一筆常見條件的雙元貨幣（數字為示意）：</p>
@@ -113,33 +140,6 @@
     <div class="fee"><span>中途解約</span><div class="bar" style="--w:8%"></div><span class="val">多半不允許</span></div>
   </div>
   <p>「發行價和<dfn data-term="合理價">合理價</dfn>的差」在這裡的意思是：同一份匯率保險，在銀行間市場能賣到的保費，比轉付給你的多一些，差額就是銀行收入。</p>
-
-  <h2 id="cases">最好、普通、最壞</h2>
-  <p>NT$100 萬換成美元，一個月期、年化 8%、連結澳幣、轉換價比當時匯率低 1%（以新台幣等值表示，暫不計美元兌新台幣的變動）：</p>
-  <div class="scenarios">
-    <div class="scenario best">
-      <h4>最好：澳幣沒跌</h4>
-      <p class="big">約 NT$100.67 萬</p>
-      <p>到期澳幣在轉換價之上，拿回美元本金加利息。這是大多數月份的結果，所以很容易讓人覺得「很安全」。</p>
-    </div>
-    <div class="scenario mid">
-      <h4>普通：澳幣小跌 2%</h4>
-      <p class="big">約 NT$99.7 萬</p>
-      <p>跌破轉換價，你的美元被換成澳幣。加上利息，帳面小賠。但你現在手上是澳幣，想換回美元還要再付一次價差。</p>
-    </div>
-    <div class="scenario worst">
-      <h4>最壞：澳幣一個月跌 15%</h4>
-      <p class="big">約 NT$86.5 萬</p>
-      <p>2008 年 10 月就發生過類似跌幅。你用跌之前的價格換到澳幣，馬上少了一成多。之後若繼續續做，可能越陷越深。</p>
-    </div>
-  </div>
-  <p class="small muted">示意計算：最壞情況 = 100 萬 × (0.85 ÷ 0.99) + 利息。未計換匯價差與稅。若你的生活是用新台幣，還要另外承擔美元兌新台幣的<dfn data-term="匯率風險">匯率風險</dfn>。</p>
-
-  <h2 id="stress">壓力測試</h2>
-  <p>下面模擬「每個月都做一次一個月期的澳幣雙元貨幣」。若被換成澳幣，下一期就做反向的雙元貨幣，試著換回美元。這是很多人實際的操作方式。</p>
-  <p>2008 年 7 月到 2009 年初，澳幣兌美元跌了三成以上。滾動續做的人在前面幾個月穩穩領利息，接著幾乎全部資金被換成澳幣，帳面虧損遠超過一整年的利息。你可以切換其他情境比較。</p>
-  <div class="stress" data-product="dci" data-scenario="gfc"></div>
-  <p>想自己調整利率、轉換價距離、起始月份，請到 <a href="../tools/stress-test.html">壓力測試工具</a>。</p>
 
   <h2 id="diy">自組替代方案</h2>
   <p>雙元貨幣解決的真正需求通常是「我想多賺一點利息」或「我本來就想在某個價位換外幣」。這兩件事可以分開、透明地做：</p>

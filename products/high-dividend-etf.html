@@ -29,17 +29,69 @@
 
   <nav class="toc" aria-label="本頁目錄"><strong>本頁目錄</strong>
     <ol>
+      <li><a href="#scenarios">最好、普通、最壞</a></li>
+      <li><a href="#stress">危機時怎麼走</a></li>
       <li><a href="#card">白話拆解卡</a></li>
       <li><a href="#source">錢從哪裡來</a></li>
       <li><a href="#fees">費用比較</a></li>
-      <li><a href="#scenarios">最好、普通、最壞</a></li>
-      <li><a href="#stress">危機時怎麼走</a></li>
       <li><a href="#diy">自己組一個</a></li>
       <li><a href="#ask">該問的問題</a></li>
       <li><a href="#fit">可能適合誰</a></li>
       <li><a href="#sources">出處</a></li>
     </ol>
   </nav>
+
+  <h2 id="scenarios">最好、普通、最壞</h2>
+  <p>以 NT$100 萬、持有一年為例（數字為教學用假設）：</p>
+  <div class="scenarios">
+    <div class="scenario best">
+      <h4>最好：成分股獲利成長、股價上漲</h4>
+      <p class="big">約 +10～25 萬</p>
+      <p>配息照領，股價也上漲。市值型和高股息型都賺錢，哪個賺比較多看當年哪些產業表現好。</p>
+    </div>
+    <div class="scenario mid">
+      <h4>普通：股價持平</h4>
+      <p class="big">約 +3～6 萬（稅前）</p>
+      <p>主要靠配息。扣掉所得稅與補充保費後，實際拿到的會再少一些。</p>
+    </div>
+    <div class="scenario worst">
+      <h4>最壞：股市大跌、公司砍股息</h4>
+      <p class="big">約 −30～40 萬或更多</p>
+      <p>股價大跌，而且成分股獲利變差、減少配息，ETF 配息也跟著降。高股息不等於抗跌。</p>
+    </div>
+  </div>
+
+  <h2 id="stress">危機時怎麼走</h2>
+  <p>本站的壓力測試引擎目前沒有收錄高股息指數的資料，下面先用文字說明大致方向。想看其他商品的實際重跑，請到<a href="../tools/stress-test.html">壓力測試工具</a>。</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>事件</th><th>大致情況</th><th>要注意的地方</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>2008 金融海嘯</td>
+          <td>幾乎所有股票都大跌，很多公司（特別是金融業）大幅減少或暫停配息。</td>
+          <td>高股息 ETF 常持有較多金融股，這次危機的震央就是金融業。「配息穩定」在危機時不一定成立。</td>
+        </tr>
+        <tr>
+          <td>2020 疫情</td>
+          <td>股市一個多月內急跌後快速反彈，反彈主要由科技等成長型公司帶動。</td>
+          <td>偏重傳統產業的高股息組合，反彈可能比較慢。</td>
+        </tr>
+        <tr>
+          <td>2022 升息</td>
+          <td>成長型股票跌得較重，部分配息穩定的傳統產業相對抗跌。</td>
+          <td>這段期間高股息類型可能表現較好。<strong>不同危機互有勝負，沒有一種在所有情況都比較好。</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout">
+    <strong>看歷史要注意</strong>
+    <ul>
+      <li>比較時要用「含息總報酬」，只比股價會讓高股息 ETF 看起來比較差，只比配息會讓它看起來比較好。</li>
+      <li>很多高股息 ETF 成立時間不長，沒有經歷過完整的大空頭。指數的「回測績效」是事後設計的，參考價值有限。</li>
+    </ul>
+  </div>
 
   <h2 id="card">白話拆解卡</h2>
   <article class="breakdown">
@@ -130,58 +182,6 @@
     <li><strong>自己賣股票：</strong>ETF 賣出時證交稅 0.1%，目前賣出價差停徵所得稅，也不扣補充保費。</li>
   </ul>
   <p>想自己算算看「領股息」和「自己賣」差多少，可以用<a href="../learn/dividends.html#calc">股息試算器</a>。</p>
-
-  <h2 id="scenarios">最好、普通、最壞</h2>
-  <p>以 NT$100 萬、持有一年為例（數字為教學用假設）：</p>
-  <div class="scenarios">
-    <div class="scenario best">
-      <h4>最好：成分股獲利成長、股價上漲</h4>
-      <p class="big">約 +10～25 萬</p>
-      <p>配息照領，股價也上漲。市值型和高股息型都賺錢，哪個賺比較多看當年哪些產業表現好。</p>
-    </div>
-    <div class="scenario mid">
-      <h4>普通：股價持平</h4>
-      <p class="big">約 +3～6 萬（稅前）</p>
-      <p>主要靠配息。扣掉所得稅與補充保費後，實際拿到的會再少一些。</p>
-    </div>
-    <div class="scenario worst">
-      <h4>最壞：股市大跌、公司砍股息</h4>
-      <p class="big">約 −30～40 萬或更多</p>
-      <p>股價大跌，而且成分股獲利變差、減少配息，ETF 配息也跟著降。高股息不等於抗跌。</p>
-    </div>
-  </div>
-
-  <h2 id="stress">危機時怎麼走</h2>
-  <p>本站的壓力測試引擎目前沒有收錄高股息指數的資料，下面先用文字說明大致方向。想看其他商品的實際重跑，請到<a href="../tools/stress-test.html">壓力測試工具</a>。</p>
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>事件</th><th>大致情況</th><th>要注意的地方</th></tr></thead>
-      <tbody>
-        <tr>
-          <td>2008 金融海嘯</td>
-          <td>幾乎所有股票都大跌，很多公司（特別是金融業）大幅減少或暫停配息。</td>
-          <td>高股息 ETF 常持有較多金融股，這次危機的震央就是金融業。「配息穩定」在危機時不一定成立。</td>
-        </tr>
-        <tr>
-          <td>2020 疫情</td>
-          <td>股市一個多月內急跌後快速反彈，反彈主要由科技等成長型公司帶動。</td>
-          <td>偏重傳統產業的高股息組合，反彈可能比較慢。</td>
-        </tr>
-        <tr>
-          <td>2022 升息</td>
-          <td>成長型股票跌得較重，部分配息穩定的傳統產業相對抗跌。</td>
-          <td>這段期間高股息類型可能表現較好。<strong>不同危機互有勝負，沒有一種在所有情況都比較好。</strong></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="callout">
-    <strong>看歷史要注意</strong>
-    <ul>
-      <li>比較時要用「含息總報酬」，只比股價會讓高股息 ETF 看起來比較差，只比配息會讓它看起來比較好。</li>
-      <li>很多高股息 ETF 成立時間不長，沒有經歷過完整的大空頭。指數的「回測績效」是事後設計的，參考價值有限。</li>
-    </ul>
-  </div>
 
   <h2 id="diy">自己組一個</h2>
   <p>如果你想要的是「長期成長＋需要時有現金流」，可以這樣想：</p>

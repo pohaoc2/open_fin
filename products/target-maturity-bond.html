@@ -29,17 +29,69 @@
 
   <nav class="toc" aria-label="本頁目錄"><strong>本頁目錄</strong>
     <ol>
+      <li><a href="#scenarios">最好、普通、最壞</a></li>
+      <li><a href="#stress">壓力測試</a></li>
       <li><a href="#card">白話拆解卡</a></li>
       <li><a href="#source">錢從哪裡來</a></li>
       <li><a href="#fees">銀行和基金公司賺多少</a></li>
-      <li><a href="#scenarios">最好、普通、最壞</a></li>
-      <li><a href="#stress">壓力測試</a></li>
       <li><a href="#diy">自己組一個</a></li>
       <li><a href="#ask">該問理專的問題</a></li>
       <li><a href="#fit">可能適合誰</a></li>
       <li><a href="#sources">出處</a></li>
     </ol>
   </nav>
+
+  <h2 id="scenarios">最好、普通、最壞</h2>
+  <p>以 NT$100 萬、6 年期為例（數字為教學用假設，未計匯率）：</p>
+  <div class="scenarios">
+    <div class="scenario best">
+      <h4>最好：都沒違約、抱到期</h4>
+      <p class="big">約 120～125 萬</p>
+      <p>債券全部準時還錢，你也沒有中途賣出。結果接近當初的預估，但仍會受匯率影響。</p>
+    </div>
+    <div class="scenario mid">
+      <h4>普通：少數違約</h4>
+      <p class="big">約 115～120 萬</p>
+      <p>有一兩檔債券出事，回收一部分。到期報酬比預估低，但大致還是正的。</p>
+    </div>
+    <div class="scenario worst">
+      <h4>最壞：違約變多＋中途急用＋美元貶值</h4>
+      <p class="big">可能低於 90 萬</p>
+      <p>利率大漲時被迫贖回，淨值下跌加上買回費用；若基金又踩到多檔違約、美元同時貶值，虧損會疊加。</p>
+    </div>
+  </div>
+
+  <h2 id="stress">壓力測試：同類資產在危機時怎麼走</h2>
+  <p>本站的壓力測試引擎目前還沒有收錄債券基金的資料，以下先用文字整理<strong>大致方向</strong>。想看其他商品的實際重跑，請到<a href="../tools/stress-test.html">壓力測試工具</a>。</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>事件</th><th>同類債券（投資等級公司債、新興市場債）</th><th>對目標到期債券基金的影響</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>2008 金融海嘯</td>
+          <td>公司債價格大跌，評等較低的跌更多；違約增加，債券很難賣出。美國公債則上漲。</td>
+          <td>當時這類基金在台灣還不普遍。若套用到同類債券，淨值會大幅下跌；抱到期的人能拿回多少，取決於有多少債券真的違約。</td>
+        </tr>
+        <tr>
+          <td>2020 疫情</td>
+          <td>3 月在幾週內急跌，央行大規模出手後快速反彈。</td>
+          <td>不少基金淨值短期明顯下跌，之後回升。在低點贖回的人，實現了虧損並付了買回費用。</td>
+        </tr>
+        <tr>
+          <td>2022 升息</td>
+          <td>利率快速上升，幾乎所有債券價格都跌；部分新興市場企業（例如部分中國房地產企業）發生違約。</td>
+          <td>淨值普遍下跌。沒有踩到違約的基金，抱到期後價格會逐步回來；踩到違約的基金，那部分損失是真的拿不回來。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout">
+    <strong>看歷史要注意</strong>
+    <ul>
+      <li>利率上升造成的淨值下跌，抱到期大多會回來；<strong>違約造成的損失不會回來</strong>。兩者要分開看。</li>
+      <li>買進時的殖利率越高，通常代表基金裡的債券風險越高，不是「免費的額外利息」。</li>
+    </ul>
+  </div>
 
   <h2 id="card">白話拆解卡</h2>
   <article class="breakdown">
@@ -103,58 +155,6 @@
     <div class="fee" role="listitem"><span>換匯價差（買進、到期各一次）</span><span class="bar" style="--w:6%"></span><span class="val">視銀行</span></div>
   </div>
   <p class="small muted">比較：直接買公債不收經理費，只有買賣手續費與價差；低成本債券 ETF 每年總費用常見約 0.03%～0.5%。</p>
-
-  <h2 id="scenarios">最好、普通、最壞</h2>
-  <p>以 NT$100 萬、6 年期為例（數字為教學用假設，未計匯率）：</p>
-  <div class="scenarios">
-    <div class="scenario best">
-      <h4>最好：都沒違約、抱到期</h4>
-      <p class="big">約 120～125 萬</p>
-      <p>債券全部準時還錢，你也沒有中途賣出。結果接近當初的預估，但仍會受匯率影響。</p>
-    </div>
-    <div class="scenario mid">
-      <h4>普通：少數違約</h4>
-      <p class="big">約 115～120 萬</p>
-      <p>有一兩檔債券出事，回收一部分。到期報酬比預估低，但大致還是正的。</p>
-    </div>
-    <div class="scenario worst">
-      <h4>最壞：違約變多＋中途急用＋美元貶值</h4>
-      <p class="big">可能低於 90 萬</p>
-      <p>利率大漲時被迫贖回，淨值下跌加上買回費用；若基金又踩到多檔違約、美元同時貶值，虧損會疊加。</p>
-    </div>
-  </div>
-
-  <h2 id="stress">壓力測試：同類資產在危機時怎麼走</h2>
-  <p>本站的壓力測試引擎目前還沒有收錄債券基金的資料，以下先用文字整理<strong>大致方向</strong>。想看其他商品的實際重跑，請到<a href="../tools/stress-test.html">壓力測試工具</a>。</p>
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>事件</th><th>同類債券（投資等級公司債、新興市場債）</th><th>對目標到期債券基金的影響</th></tr></thead>
-      <tbody>
-        <tr>
-          <td>2008 金融海嘯</td>
-          <td>公司債價格大跌，評等較低的跌更多；違約增加，債券很難賣出。美國公債則上漲。</td>
-          <td>當時這類基金在台灣還不普遍。若套用到同類債券，淨值會大幅下跌；抱到期的人能拿回多少，取決於有多少債券真的違約。</td>
-        </tr>
-        <tr>
-          <td>2020 疫情</td>
-          <td>3 月在幾週內急跌，央行大規模出手後快速反彈。</td>
-          <td>不少基金淨值短期明顯下跌，之後回升。在低點贖回的人，實現了虧損並付了買回費用。</td>
-        </tr>
-        <tr>
-          <td>2022 升息</td>
-          <td>利率快速上升，幾乎所有債券價格都跌；部分新興市場企業（例如部分中國房地產企業）發生違約。</td>
-          <td>淨值普遍下跌。沒有踩到違約的基金，抱到期後價格會逐步回來；踩到違約的基金，那部分損失是真的拿不回來。</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="callout">
-    <strong>看歷史要注意</strong>
-    <ul>
-      <li>利率上升造成的淨值下跌，抱到期大多會回來；<strong>違約造成的損失不會回來</strong>。兩者要分開看。</li>
-      <li>買進時的殖利率越高，通常代表基金裡的債券風險越高，不是「免費的額外利息」。</li>
-    </ul>
-  </div>
 
   <h2 id="diy">自己組一個</h2>
   <p>目標到期債券基金想做到的是「鎖定幾年的利息，到期拿回錢」。這可以用更直接的方式做到：</p>

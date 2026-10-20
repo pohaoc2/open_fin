@@ -48,14 +48,14 @@
 
 ## 商品頁模板
 
-新商品頁複製 `templates/page.html`，章節順序固定：
+新商品頁複製 `templates/page.html`，章節順序固定。報酬的例子放最前面，一般讀者先看到「會拿回多少」，再看原理：
 
-1. 一句話說明 + 目錄
-2. 白話拆解卡（`.breakdown`）＋風險燈號（`.risk`）
-3. 錢從哪裡來
-4. 銀行賺多少（`.fees`）
-5. 最好／普通／最壞（`.scenarios`）
-6. 壓力測試（`<div class="stress" data-product="...">`）
+1. 一句話說明 + 目錄（可加「一句話記住」`.callout`）
+2. 最好／普通／最壞（`.scenarios`）：要能單獨看懂，第一次出現的術語加 `<dfn data-term>`，不要寫「用上面的例子」
+3. 壓力測試（`<div class="stress" data-product="...">`）
+4. 白話拆解卡（`.breakdown`）＋風險燈號（`.risk`）
+5. 錢從哪裡來
+6. 銀行賺多少（`.fees`）
 7. 自組替代方案（`.steps`）＋缺點
 8. 問理專的問題（`.qa`）
 9. 可能適合誰／不適合誰

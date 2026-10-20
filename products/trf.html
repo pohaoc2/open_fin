@@ -30,11 +30,11 @@
   <nav class="toc" aria-label="本頁目錄">
     <strong>本頁目錄</strong>
     <ol>
+      <li><a href="#cases">最好、普通、最壞</a></li>
+      <li><a href="#stress">壓力測試</a></li>
       <li><a href="#card">白話拆解卡</a></li>
       <li><a href="#source">錢從哪裡來</a></li>
       <li><a href="#bank">銀行賺多少</a></li>
-      <li><a href="#cases">最好、普通、最壞</a></li>
-      <li><a href="#stress">壓力測試</a></li>
       <li><a href="#diy">替代方案</a></li>
       <li><a href="#ask">問理專的問題</a></li>
       <li><a href="#fit">可能適合誰</a></li>
@@ -46,6 +46,33 @@
     <strong>先說結論</strong>
     <p>TRF 的虧損可能<strong>遠大於你拿出來的錢</strong>。2014–2016 年人民幣貶值時，台灣有許多企業和個人因 TRF 大額虧損，引發大量糾紛，主管機關自 2015 年起陸續收緊規定，包括要求設定最大損失上限。本頁的目的是幫你看懂風險，不是教你操作。</p>
   </div>
+
+  <h2 id="cases">最好、普通、最壞</h2>
+  <p>以 2014 年初常見的示意合約為例：<dfn data-term="履約價">約定匯率</dfn> 6.20，對你有利時每月按 10 萬美元算，不利時按 <strong>20 萬美元</strong>算，賺到每 1 美元 0.30 人民幣就提早結束（條件細節見<a href="#source">錢從哪裡來</a>；人民幣換新台幣以約 4.7–4.9 計算，四捨五入）：</p>
+  <div class="scenarios">
+    <div class="scenario best">
+      <h4>最好：人民幣持續強勢</h4>
+      <p class="big">約 +NT$15 萬</p>
+      <p>前兩三個月就賺到獲利上限，合約提早結束。這也是當年許多人「先嚐到甜頭」的經驗。</p>
+    </div>
+    <div class="scenario mid">
+      <h4>普通：人民幣小貶到 6.27 左右</h4>
+      <p class="big">約 −NT$80 萬（一年）</p>
+      <p>每月賠 0.07 × 20 萬美元 ≈ 1.4 萬人民幣（約 NT$6.7 萬），沒有賺到目標，合約一直不會結束。</p>
+    </div>
+    <div class="scenario worst">
+      <h4>最壞：人民幣貶到 6.9</h4>
+      <p class="big">超過 −NT$1,000 萬</p>
+      <p>每月賠 0.70 × 20 萬美元 = 14 萬人民幣（約 NT$65 萬），若剩下 20 期都在這個價位，累計虧損約 NT$1,300 萬，是獲利上限的八十多倍。這是 2015 年以前、沒有最大損失上限的合約；之後的合約會在上限處停損，但上限通常仍是本金或權利金的好幾倍。</p>
+    </div>
+  </div>
+  <p class="small muted">示意計算，未計保證金利息、提前結束費用與稅。2016 年底人民幣兌美元確實曾接近 6.9。</p>
+
+  <h2 id="stress">壓力測試</h2>
+  <p>下面用真實的美元兌人民幣月資料，模擬一份 TRF 從你選的月份開始逐月結算。2014 年初簽約的人，如果很快賺到上限就能全身而退；但若之後才簽、或條件比較緊，2015 年 8 月人民幣突然貶值後，每個月都是加倍虧損。</p>
+  <p>請特別注意圖上累計損益的形狀：上去很慢、有天花板；下去很快，地板很深（早期合約甚至沒有地板）。</p>
+  <div class="stress" data-product="trf" data-scenario="cny2015"></div>
+  <p>想調整約定匯率、獲利上限、起始月份，請到 <a href="../tools/stress-test.html">壓力測試工具</a>。</p>
 
   <h2 id="card">白話拆解卡</h2>
   <article class="breakdown">
@@ -111,33 +138,6 @@
     <div class="fee"><span>保證金追繳</span><div class="bar" style="--w:70%"></div><span class="val">行情變差時要補錢</span></div>
     <div class="fee"><span>提前結束費用</span><div class="bar" style="--w:95%"></div><span class="val">一次付清剩餘預估虧損</span></div>
   </div>
-
-  <h2 id="cases">最好、普通、最壞</h2>
-  <p>用上面的示意合約（人民幣換新台幣以約 4.7–4.9 計算，四捨五入）：</p>
-  <div class="scenarios">
-    <div class="scenario best">
-      <h4>最好：人民幣持續強勢</h4>
-      <p class="big">約 +NT$15 萬</p>
-      <p>前兩三個月就賺到獲利上限，合約提早結束。這也是當年許多人「先嚐到甜頭」的經驗。</p>
-    </div>
-    <div class="scenario mid">
-      <h4>普通：人民幣小貶到 6.27 左右</h4>
-      <p class="big">約 −NT$80 萬（一年）</p>
-      <p>每月賠 0.07 × 20 萬美元 ≈ 1.4 萬人民幣（約 NT$6.7 萬），沒有賺到目標，合約一直不會結束。</p>
-    </div>
-    <div class="scenario worst">
-      <h4>最壞：人民幣貶到 6.9</h4>
-      <p class="big">超過 −NT$1,000 萬</p>
-      <p>每月賠 0.70 × 20 萬美元 = 14 萬人民幣（約 NT$65 萬），若剩下 20 期都在這個價位，累計虧損約 NT$1,300 萬，是獲利上限的八十多倍。這是 2015 年以前、沒有最大損失上限的合約；之後的合約會在上限處停損，但上限通常仍是本金或權利金的好幾倍。</p>
-    </div>
-  </div>
-  <p class="small muted">示意計算，未計保證金利息、提前結束費用與稅。2016 年底人民幣兌美元確實曾接近 6.9。</p>
-
-  <h2 id="stress">壓力測試</h2>
-  <p>下面用真實的美元兌人民幣月資料，模擬一份 TRF 從你選的月份開始逐月結算。2014 年初簽約的人，如果很快賺到上限就能全身而退；但若之後才簽、或條件比較緊，2015 年 8 月人民幣突然貶值後，每個月都是加倍虧損。</p>
-  <p>請特別注意圖上累計損益的形狀：上去很慢、有天花板；下去很快，地板很深（早期合約甚至沒有地板）。</p>
-  <div class="stress" data-product="trf" data-scenario="cny2015"></div>
-  <p>想調整約定匯率、獲利上限、起始月份，請到 <a href="../tools/stress-test.html">壓力測試工具</a>。</p>
 
   <h2 id="diy">替代方案</h2>
   <div class="callout warn">

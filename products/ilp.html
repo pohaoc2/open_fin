@@ -29,17 +29,50 @@
 
   <nav class="toc" aria-label="本頁目錄"><strong>本頁目錄</strong>
     <ol>
+      <li><a href="#scenarios">最好、普通、最壞</a></li>
+      <li><a href="#stress">壓力測試</a></li>
       <li><a href="#card">白話拆解卡</a></li>
       <li><a href="#source">錢從哪裡來</a></li>
       <li><a href="#fees">保險公司賺多少</a></li>
-      <li><a href="#scenarios">最好、普通、最壞</a></li>
-      <li><a href="#stress">壓力測試</a></li>
       <li><a href="#diy">自己組一個</a></li>
       <li><a href="#ask">該問業務員的問題</a></li>
       <li><a href="#fit">可能適合誰</a></li>
       <li><a href="#sources">出處</a></li>
     </ol>
   </nav>
+
+  <h2 id="scenarios">最好、普通、最壞</h2>
+  <p>假設每年繳 12 萬、20 年，總共繳 240 萬：</p>
+  <div class="scenarios">
+    <div class="scenario best">
+      <h4>最好：市場長期大漲</h4>
+      <p class="big">帳戶大幅成長</p>
+      <p>帳戶會賺錢，但每一年的漲幅都先被費用分走一截。同樣的市場，自組通常會多出不少。</p>
+    </div>
+    <div class="scenario mid">
+      <h4>普通：市場平平</h4>
+      <p class="big">接近或低於 240 萬</p>
+      <p>市場每年只漲 2～3% 時，費用幾乎吃光所有報酬，20 年後可能跟繳的錢差不多，甚至更少。</p>
+    </div>
+    <div class="scenario worst">
+      <h4>最壞：前幾年遇到股災又急用錢</h4>
+      <p class="big">可能拿回不到一半</p>
+      <p>帳戶市值大跌，加上前置費用和解約費用，前幾年解約的損失會非常大。如果帳戶不夠扣保障費用，保單還可能停效。</p>
+    </div>
+  </div>
+
+  <h2 id="stress">壓力測試：放進 2008 年金融海嘯</h2>
+  <p>下面用真實的歷史股價，比較「投資型保單」和「定期險＋指數 ETF」兩種做法，在股災期間和之後的帳戶變化。你可以切換情境，例如 2000 年網路泡沫或 2008 年金融海嘯開始定期定額。</p>
+  <div class="stress" data-product="ilp" data-scenario="gfc"></div>
+  <script type="module" src="../assets/engine/stress.js"></script>
+  <div class="callout">
+    <strong>看圖時注意</strong>
+    <ul>
+      <li><strong>股災時兩條線都會跌</strong>，保單不會因為「是保險」就比較抗跌。帳戶裡裝的是基金，基金跌，帳戶就跌。</li>
+      <li><strong>拉長時間看，兩條線會越拉越開</strong>，差距主要來自每年持續扣的費用。</li>
+    </ul>
+  </div>
+  <p>想試其他情境，請到<a href="../tools/stress-test.html">壓力測試工具</a>；想輸入自己保單的費用，請用<a href="../tools/fee-calculator.html">費用試算機</a>。</p>
 
   <h2 id="card">白話拆解卡</h2>
   <article class="breakdown">
@@ -108,39 +141,6 @@
     </ul>
     <p>差了約 <strong>120 多萬</strong>，兩邊繳的錢一樣多。這裡假設兩邊的保障費用相同，所以沒算進去。想換成你的數字，請用<a href="../tools/fee-calculator.html">費用試算機</a>。</p>
   </div>
-
-  <h2 id="scenarios">最好、普通、最壞</h2>
-  <p>同樣每年繳 12 萬、20 年，總共繳 240 萬：</p>
-  <div class="scenarios">
-    <div class="scenario best">
-      <h4>最好：市場長期大漲</h4>
-      <p class="big">帳戶大幅成長</p>
-      <p>帳戶會賺錢，但每一年的漲幅都先被費用分走一截。同樣的市場，自組通常會多出不少。</p>
-    </div>
-    <div class="scenario mid">
-      <h4>普通：市場平平</h4>
-      <p class="big">接近或低於 240 萬</p>
-      <p>市場每年只漲 2～3% 時，費用幾乎吃光所有報酬，20 年後可能跟繳的錢差不多，甚至更少。</p>
-    </div>
-    <div class="scenario worst">
-      <h4>最壞：前幾年遇到股災又急用錢</h4>
-      <p class="big">可能拿回不到一半</p>
-      <p>帳戶市值大跌，加上前置費用和解約費用，前幾年解約的損失會非常大。如果帳戶不夠扣保障費用，保單還可能停效。</p>
-    </div>
-  </div>
-
-  <h2 id="stress">壓力測試：放進 2008 年金融海嘯</h2>
-  <p>下面用真實的歷史股價，比較「投資型保單」和「定期險＋指數 ETF」兩種做法，在股災期間和之後的帳戶變化。你可以切換情境，例如 2000 年網路泡沫或 2008 年金融海嘯開始定期定額。</p>
-  <div class="stress" data-product="ilp" data-scenario="gfc"></div>
-  <script type="module" src="../assets/engine/stress.js"></script>
-  <div class="callout">
-    <strong>看圖時注意</strong>
-    <ul>
-      <li><strong>股災時兩條線都會跌</strong>，保單不會因為「是保險」就比較抗跌。帳戶裡裝的是基金，基金跌，帳戶就跌。</li>
-      <li><strong>拉長時間看，兩條線會越拉越開</strong>，差距主要來自每年持續扣的費用。</li>
-    </ul>
-  </div>
-  <p>想試其他情境，請到<a href="../tools/stress-test.html">壓力測試工具</a>；想輸入自己保單的費用，請用<a href="../tools/fee-calculator.html">費用試算機</a>。</p>
 
   <h2 id="diy">自己組一個：買定期險，差額自己投資</h2>
   <p>國外常說的「Buy term and invest the difference」，意思是：保障和投資分開處理。</p>

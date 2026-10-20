@@ -29,17 +29,50 @@
 
   <nav class="toc" aria-label="本頁目錄"><strong>本頁目錄</strong>
     <ol>
+      <li><a href="#scenarios">最好、普通、最壞</a></li>
+      <li><a href="#stress">壓力測試</a></li>
       <li><a href="#card">白話拆解卡</a></li>
       <li><a href="#source">錢從哪裡來</a></li>
       <li><a href="#fees">銀行賺多少</a></li>
-      <li><a href="#scenarios">最好、普通、最壞</a></li>
-      <li><a href="#stress">壓力測試</a></li>
       <li><a href="#diy">自己組一個</a></li>
       <li><a href="#ask">該問理專的問題</a></li>
       <li><a href="#fit">可能適合誰</a></li>
       <li><a href="#sources">出處</a></li>
     </ol>
   </nav>
+
+  <h2 id="scenarios">最好、普通、最壞</h2>
+  <p>舉例：NT$100 萬，5 年，100% <dfn data-term="保本率">保本</dfn>，<dfn data-term="參與率">參與率</dfn> 50%，連結某股價指數。</p>
+  <div class="scenarios">
+    <div class="scenario best">
+      <h4>最好：指數 5 年漲 60%</h4>
+      <p class="big">約 130 萬</p>
+      <p>本金 100 萬 + 漲幅 60% × 參與率 50%。看起來不錯，但直接買指數 ETF 大約是 160 萬，再加上這 5 年的股息。</p>
+    </div>
+    <div class="scenario mid">
+      <h4>普通：指數 5 年持平或下跌</h4>
+      <p class="big">100 萬</p>
+      <p>拿回本金，但 5 年沒有利息。同期放定存或買公債，可能已經多 10 幾萬。這就是保本的「隱形成本」。</p>
+    </div>
+    <div class="scenario worst">
+      <h4>最壞：發行機構倒閉</h4>
+      <p class="big">可能剩不到一半</p>
+      <p>保本承諾跟著失效，只能等破產清算分配，可能拖很多年，拿回多少沒人能保證。如果是外幣計價，還要再加上匯率損失。</p>
+    </div>
+  </div>
+
+  <h2 id="stress">壓力測試：放進 2008 年金融海嘯</h2>
+  <p>下面用真實的歷史股價重跑一次。你可以切換情境，打開「發行機構倒閉」開關，看看保本商品、自己組合、直接買指數、放現金四條線的差別。</p>
+  <div class="stress" data-product="pp-note" data-scenario="gfc"></div>
+  <script type="module" src="../assets/engine/stress.js"></script>
+  <div class="callout warn">
+    <strong>看圖時注意兩件事</strong>
+    <ul>
+      <li><strong>發行機構沒倒時</strong>：保本商品在股災中很安穩，這是它真正的優點。但股市反彈時，它也只分到一部分漲幅。</li>
+      <li><strong>發行機構倒閉時</strong>：保本瞬間消失。2008 年很多人以為自己買的是「保本」，最後才發現保本是發行機構的承諾，而不是政府或銀行的保證。</li>
+    </ul>
+  </div>
+  <p>想試更多情境與參數，請到<a href="../tools/stress-test.html">壓力測試工具</a>。</p>
 
   <h2 id="card">白話拆解卡</h2>
   <article class="breakdown">
@@ -94,39 +127,6 @@
     <div class="fee" role="listitem"><span>提前贖回的價差</span><span class="bar" style="--w:40%"></span><span class="val">視市況</span></div>
   </div>
   <p class="small muted">常見範圍，實際以商品說明書與銀行揭露為準。可以直接問理專：「這檔商品的發行價和合理價差多少？銀行拿多少通路報酬？」你有權要求銀行用書面說明它收了多少通路報酬（揭露方式以主管機關現行規定為準）。</p>
-
-  <h2 id="scenarios">最好、普通、最壞</h2>
-  <p>同一個例子：NT$100 萬，5 年，100% 保本，參與率 50%，連結某股價指數。</p>
-  <div class="scenarios">
-    <div class="scenario best">
-      <h4>最好：指數 5 年漲 60%</h4>
-      <p class="big">約 130 萬</p>
-      <p>本金 100 萬 + 漲幅 60% × 參與率 50%。看起來不錯，但直接買指數 ETF 大約是 160 萬，再加上這 5 年的股息。</p>
-    </div>
-    <div class="scenario mid">
-      <h4>普通：指數 5 年持平或下跌</h4>
-      <p class="big">100 萬</p>
-      <p>拿回本金，但 5 年沒有利息。同期放定存或買公債，可能已經多 10 幾萬。這就是保本的「隱形成本」。</p>
-    </div>
-    <div class="scenario worst">
-      <h4>最壞：發行機構倒閉</h4>
-      <p class="big">可能剩不到一半</p>
-      <p>保本承諾跟著失效，只能等破產清算分配，可能拖很多年，拿回多少沒人能保證。如果是外幣計價，還要再加上匯率損失。</p>
-    </div>
-  </div>
-
-  <h2 id="stress">壓力測試：放進 2008 年金融海嘯</h2>
-  <p>下面用真實的歷史股價重跑一次。你可以切換情境，打開「發行機構倒閉」開關，看看保本商品、自己組合、直接買指數、放現金四條線的差別。</p>
-  <div class="stress" data-product="pp-note" data-scenario="gfc"></div>
-  <script type="module" src="../assets/engine/stress.js"></script>
-  <div class="callout warn">
-    <strong>看圖時注意兩件事</strong>
-    <ul>
-      <li><strong>發行機構沒倒時</strong>：保本商品在股災中很安穩，這是它真正的優點。但股市反彈時，它也只分到一部分漲幅。</li>
-      <li><strong>發行機構倒閉時</strong>：保本瞬間消失。2008 年很多人以為自己買的是「保本」，最後才發現保本是發行機構的承諾，而不是政府或銀行的保證。</li>
-    </ul>
-  </div>
-  <p>想試更多情境與參數，請到<a href="../tools/stress-test.html">壓力測試工具</a>。</p>
 
   <h2 id="diy">自己組一個：債券或定存 + 少量指數 ETF</h2>
   <p>保本型商品的結構很簡單，你可以自己做出類似效果，而且錢分散在不同地方：</p>
