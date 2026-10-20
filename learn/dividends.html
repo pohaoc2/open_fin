@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>領股息＝賣掉一部分股票？｜看懂再買</title>
+<meta name="description" content="除息是什麼、填息算不算賺到、領股息和自己賣股票有什麼差別，附台灣股利稅與二代健保補充保費試算。">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<style>
+  .calc-out { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin: 1em 0; }
+  .calc-out .scenario dl { margin: 0; display: grid; grid-template-columns: 1fr auto; gap: 2px 10px; font-size: .95rem; }
+  .calc-out .scenario dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; }
+  .calc-note { font-size: .92rem; }
+</style>
+</head>
+<body>
+<header class="site-header"><div class="inner">
+  <a class="brand" href="../index.html">看懂<span>再買</span></a>
+  <nav class="site-nav" aria-label="主選單">
+    <a href="../products/index.html">產品拆解</a>
+    <a href="../tools/index.html">壓力測試與試算</a>
+    <a href="../learn/index.html">基礎課</a>
+    <a href="../questions.html">問理專清單</a>
+    <a href="../cases.html">真實案例</a>
+    <a href="../glossary.html">白話詞彙</a>
+    <a href="../about.html">關於</a>
+  </nav>
+  <button class="theme-toggle" type="button" aria-label="切換深淺色">◐</button>
+</div></header>
+
+<main>
+  <p class="breadcrumb"><a href="../index.html">首頁</a> › <a href="index.html">基礎課</a> › 領股息＝賣掉一部分股票？</p>
+  <h1>領股息＝賣掉一部分股票？</h1>
+  <p class="lead">很多人覺得「股息是多賺的」。其實領股息，很像公司幫你把一小部分股票換成現金。總資產沒有變多，只是從「股票」搬到「現金」。</p>
+
+  <nav class="toc" aria-label="本頁目錄"><strong>本頁目錄</strong>
+    <ol>
+      <li><a href="#pizza">先從披薩講起</a></li>
+      <li><a href="#exdiv">用 100 萬算一次除息</a></li>
+      <li><a href="#fill">填息算不算賺到？</a></li>
+      <li><a href="#vs-sell">領股息 vs 自己賣股票</a></li>
+      <li><a href="#calc">試算：稅和健保費差多少</a></li>
+      <li><a href="#takeaway">重點整理</a></li>
+      <li><a href="#sources">出處</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="pizza">先從披薩講起</h2>
+  <p>你有一整個披薩。老闆切一片放到你的盤子上，跟你說：「這是送你的。」</p>
+  <p>可是那片本來就是你的披薩。你盤子上多了一片，桌上的披薩少了一片，<strong>你擁有的披薩總量完全沒變</strong>。</p>
+  <p>股息也是這樣。公司把一部分的錢發給股東，公司本身就少了這筆錢，股價也會往下調。這一天叫<dfn data-term="除息">除息</dfn>。</p>
+
+  <h2 id="exdiv">用 100 萬算一次除息</h2>
+  <p>假設你用 NT$100 萬買了一檔股票（或 ETF），每股 50 元，共 20,000 股。這次每股配 2.5 元：</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th></th><th class="num">除息前一天</th><th class="num">除息當天</th></tr></thead>
+      <tbody>
+        <tr><td>股價</td><td class="num">50 元</td><td class="num">47.5 元</td></tr>
+        <tr><td>股票市值（20,000 股）</td><td class="num">1,000,000 元</td><td class="num">950,000 元</td></tr>
+        <tr><td>領到的現金</td><td class="num">0 元</td><td class="num">50,000 元</td></tr>
+        <tr><th>你的總資產</th><th class="num">1,000,000 元</th><th class="num">1,000,000 元</th></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>股價從 50 元扣掉 2.5 元，變成 47.5 元。股票少了 5 萬，現金多了 5 萬。<strong>總資產一樣是 100 萬。</strong></p>
+  <div class="callout warn">
+    <strong>還沒算稅和健保費</strong>
+    <p>上面是稅前。實際上這 5 萬可能要繳所得稅，而且單筆超過 2 萬元還會被扣<dfn data-term="二代健保補充保費">二代健保補充保費</dfn>（目前 2.11%，約 1,055 元）。所以扣完之後，你的總資產其實<strong>比 100 萬還少一點</strong>。</p>
+  </div>
+
+  <h2 id="fill">填息算不算賺到？</h2>
+  <p>除息後股價如果漲回原本的 50 元，叫<dfn data-term="填息">填息</dfn>。很多人會說「填息了，等於白賺 2.5 元」。</p>
+  <p>換個角度想：假設公司這一年經營得不錯，價值成長了 5%。</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>情況</th><th class="num">一年後股價</th><th class="num">股票 ＋ 現金</th></tr></thead>
+      <tbody>
+        <tr><td>沒有配息</td><td class="num">50 × 1.05 ＝ 52.5 元</td><td class="num">1,050,000 元</td></tr>
+        <tr><td>有配息 2.5 元</td><td class="num">47.5 × 1.05 ≈ 49.9 元</td><td class="num">997,500 ＋ 50,000 ＝ 1,047,500 元</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>兩種情況的總資產差不多（差的那一點，是領到的 5 萬沒有跟著成長）。<strong>股價漲回來，靠的是公司本身變得更值錢，跟有沒有配息無關。</strong>不配息的話，股價一樣會漲，只是你不會說它「填息」。</p>
+  <div class="callout">
+    <strong>真正該看的是「總報酬」</strong>
+    <p><dfn data-term="總報酬">總報酬</dfn>＝股價漲跌＋領到的股息。只看股息，或只看有沒有填息，都只看到一半。</p>
+  </div>
+
+  <h2 id="vs-sell">領股息 vs 自己賣股票</h2>
+  <p>假設有一檔完全不配息的股票，你每年自己賣掉 5% 換成現金。效果跟「每年配 5% 股息」幾乎一樣：股票變少一點，現金多一點。</p>
+  <p>差別在下面這幾件事：</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th></th><th>領股息</th><th>自己賣一點</th></tr></thead>
+      <tbody>
+        <tr><td>總資產</td><td>不變（現金搬出來）</td><td>不變（現金搬出來）</td></tr>
+        <tr><td>所得稅</td><td>股利要報所得稅（可選合併或分開計稅）</td><td>台灣目前賣股票的價差<strong>停徵</strong>所得稅</td></tr>
+        <tr><td>二代健保補充保費</td><td>單筆股利 ≥ 2 萬元，扣 2.11%</td><td>不用</td></tr>
+        <tr><td>交易成本</td><td>沒有</td><td>ETF <dfn data-term="證券交易稅">證交稅</dfn> 0.1%、股票 0.3%，加上券商手續費</td></tr>
+        <tr><td>誰決定</td><td>公司或 ETF 決定配多少、何時配</td><td>你自己決定賣多少、什麼時候賣</td></tr>
+        <tr><td>心理感受</td><td>感覺像「收入」，比較安心</td><td>感覺像「花老本」，有些人會不安</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>配息也有優點，老實說</h3>
+  <ul>
+    <li><strong>不用自己決定。</strong>錢會自動進帳，不用每次煩惱要賣多少、什麼時候賣。</li>
+    <li><strong>有紀律。</strong>只花配息、不動股票，等於替自己設了花錢的上限，不容易一次領太多。</li>
+    <li><strong>心理上安心。</strong>對很多退休族來說，「不動本金」的感覺很重要，能讓人在市場大跌時比較不會恐慌賣出。這個價值是真的，只是要知道它可能有稅和費用的代價。</li>
+  </ul>
+  <p>對所得稅率低的人來說，股利還可能因為 8.5% 可抵減稅額而<strong>退一點稅</strong>，這時領股息反而比自己賣更划算。下面的試算可以自己算算看。</p>
+
+  <h2 id="calc">試算：稅和健保費差多少</h2>
+  <p>比較兩種方式每年拿出<strong>一樣多的稅前現金</strong>，最後實際拿到的錢差多少。</p>
+  <form class="controls no-print" id="divcalc" onsubmit="return false">
+    <label>投入金額（元）<input type="number" id="amt" value="1000000" min="0" step="10000"></label>
+    <label>殖利率（每年拿出多少 %）<input type="number" id="yld" value="5" min="0" max="20" step="0.1"></label>
+    <label>年數<input type="number" id="yrs" value="10" min="1" max="40" step="1"></label>
+    <label>每年總報酬（%，兩邊相同）<input type="number" id="ret" value="7" min="-20" max="20" step="0.5"></label>
+    <label>每年配幾次
+      <select id="freq">
+        <option value="1">年配（1 次）</option>
+        <option value="2">半年配（2 次）</option>
+        <option value="4" selected>季配（4 次）</option>
+        <option value="12">月配（12 次）</option>
+      </select>
+    </label>
+    <label>綜合所得稅級距
+      <select id="bracket">
+        <option value="0.05">5%</option>
+        <option value="0.12" selected>12%</option>
+        <option value="0.2">20%</option>
+        <option value="0.3">30%</option>
+        <option value="0.4">40%</option>
+      </select>
+    </label>
+    <label>配息中屬於「股利所得」的比例（%）<input type="number" id="divShare" value="100" min="0" max="100" step="5"></label>
+    <label>自己賣：券商手續費（%）<input type="number" id="brk" value="0.1425" min="0" max="1" step="0.01"></label>
+  </form>
+  <div id="calc-result" aria-live="polite"></div>
+  <details class="calc-note">
+    <summary>這個試算做了哪些假設</summary>
+    <ul>
+      <li>兩種方式的投資內容與總報酬相同；每年年底拿出「年初市值 × 殖利率」的稅前現金。因此兩邊的<strong>期末股票市值相同</strong>，差別只在稅費。</li>
+      <li>所得稅：自動選較省的方式。合併計稅＝股利 × 你的級距 − 股利 × 8.5%（每戶最多抵 8 萬元，抵完有剩可退稅）；分開計稅＝股利 × 28%。假設這是你家唯一的股利，而且股利不會讓你跳到更高級距。</li>
+      <li>二代健保補充保費：每次配息中屬於股利的部分 ≥ 2 萬元時，扣 2.11%（每次上限 1,000 萬元，這裡忽略）。政府曾研議改成全年合計，請留意最新規定。</li>
+      <li>ETF 配息裡屬於<dfn data-term="收益平準金">收益平準金</dfn>或資本利得的部分，一般不用繳所得稅和補充保費。每檔 ETF 比例不同，可在上面調整。</li>
+      <li>自己賣：ETF 證交稅 0.1%，加上券商手續費（預設 0.1425%，很多券商有折扣）。證券交易所得目前停徵所得稅。</li>
+      <li>稅法與費率可能變動，請以財政部、健保署公告為準。</li>
+    </ul>
+  </details>
+
+  <h2 id="takeaway">重點整理</h2>
+  <ol class="steps">
+    <li><strong>領股息不是多賺。</strong>除息時股價會扣掉股息，總資產不變。</li>
+    <li><strong>填息不是多賺。</strong>股價漲回來是公司成長，不配息也會漲。</li>
+    <li><strong>看總報酬，不要只看殖利率。</strong>高殖利率但股價一直跌，總報酬可能是負的。</li>
+    <li><strong>差別在稅、費和心理。</strong>高所得的人領股息通常比較吃虧；低所得的人可能反而有利。</li>
+  </ol>
+  <p>想看高股息 ETF 和市值型 ETF 的比較，請看<a href="../products/high-dividend-etf.html">高股息 ETF vs 市值型 ETF</a>。</p>
+
+  <h2 id="sources">出處</h2>
+  <ul class="sources">
+    <li>Miller, M. H., &amp; Modigliani, F. (1961). Dividend Policy, Growth, and the Valuation of Shares. <i>The Journal of Business</i>, 34(4). 在沒有稅與交易成本的理想情況下，配息政策不影響股東總財富。</li>
+    <li>Hartzmark, S. M., &amp; Solomon, D. H. (2019). The Dividend Disconnect. <i>The Journal of Finance</i>, 74(5). 研究投資人常把股息和股價漲跌分開看待的現象。</li>
+    <li>股利所得合併計稅（8.5% 可抵減、每戶上限 8 萬元）與分開計稅（28%）：<a href="https://www.money101.com.tw/blog/所得稅-申報-股利課稅-計算-分開計稅-合併計稅-股票">Money101 所得稅懶人包</a>、<a href="https://ec.ltn.com.tw/article/breakingnews/2773545">自由時報財經週報</a>；官方規定以<a href="https://www.etax.nat.gov.tw">財政部稅務入口網</a>為準。</li>
+    <li>二代健保補充保費 2.11%、單筆 2 萬元門檻，以及全年合計改制的研議：<a href="https://www.cw.com.tw/article/5138195">天下雜誌</a>、<a href="https://news.tvbs.com.tw/life/3037200">TVBS</a>；官方規定以<a href="https://www.nhi.gov.tw">衛生福利部中央健康保險署</a>為準。</li>
+    <li>ETF 配息來源（股利、資本利得、收益平準金）的課稅與補充保費差異：<a href="https://www.mirrormedia.mg/story/20240510money002">鏡週刊</a>、<a href="https://smart.businessweekly.com.tw/Reading/IndepArticle.aspx?id=6007920">Smart 自學網</a>。</li>
+    <li>證券交易稅：股票 0.3%、ETF 0.1%，債券型 ETF 暫停徵收至 2026 年底：<a href="https://smart.businessweekly.com.tw/Reading/IndepArticle.aspx?id=6015480">Smart 自學網</a>（以財政部最新公告為準）。</li>
+  </ul>
+</main>
+
+<footer class="site-footer"><div class="inner">
+  <p><strong>本站僅供教育，不是投資建議。</strong>不推薦任何金融機構或個別商品，也不收費、不放廣告。內容可能有錯，請以商品公開說明書、保單條款與主管機關公告為準，重大決定前可諮詢無利益關係的專業人士。</p>
+  <p>文字內容採 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hant">CC BY-SA 4.0</a>，程式碼採 MIT 授權。<a href="../about.html">關於本站與如何參與</a></p>
+</div></footer>
+<script type="module" src="../assets/site.js"></script>
+<script type="module">
+  // 領股息 vs 自己賣：同樣的稅前現金，比較稅費
+  const NHI_RATE = 0.0211, NHI_MIN = 20000, CREDIT_RATE = 0.085, CREDIT_CAP = 80000, SEP_RATE = 0.28, ETF_TAX = 0.001;
+  const $ = (id) => document.getElementById(id);
+  const fmt = (n) => Math.round(n).toLocaleString("zh-TW");
+
+  function dividendTax(div, bracket) {
+    const combined = div * bracket - Math.min(div * CREDIT_RATE, CREDIT_CAP);
+    const separate = div * SEP_RATE;
+    return combined <= separate ? { tax: combined, how: "合併計稅" } : { tax: separate, how: "分開計稅" };
+  }
+
+  function run() {
+    const amt = +$("amt").value, y = +$("yld").value / 100, yrs = Math.round(+$("yrs").value);
+    const r = +$("ret").value / 100, freq = +$("freq").value, bracket = +$("bracket").value;
+    const share = +$("divShare").value / 100, brk = +$("brk").value / 100;
+    let v = amt, gross = 0, tax = 0, nhi = 0, sellCost = 0;
+    const methods = new Set();
+    for (let t = 0; t < yrs; t++) {
+      const cash = v * y;
+      const taxable = cash * share;
+      const dt = dividendTax(taxable, bracket);
+      methods.add(dt.how);
+      tax += dt.tax;
+      const perPay = taxable / freq;
+      if (perPay >= NHI_MIN) nhi += taxable * NHI_RATE;
+      sellCost += cash * (ETF_TAX + brk);
+      gross += cash;
+      v = v * (1 + r) - cash;
+    }
+    const netDiv = gross - tax - nhi, netSell = gross - sellCost;
+    const diff = netSell - netDiv;
+    const verdict = Math.abs(diff) < 1
+      ? "兩種方式差不多。"
+      : diff > 0
+        ? `自己賣多拿約 <strong>${fmt(diff)} 元</strong>。`
+        : `領股息多拿約 <strong>${fmt(-diff)} 元</strong>（低稅率時，股利可抵減稅額可能讓你退稅）。`;
+    $("calc-result").innerHTML = `
+      <div class="calc-out">
+        <div class="scenario mid"><h4>領股息</h4><dl>
+          <dt>稅前現金</dt><dd>${fmt(gross)}</dd>
+          <dt>所得稅（${[...methods].join("／")}）</dt><dd>${tax >= 0 ? "−" : "+"}${fmt(Math.abs(tax))}</dd>
+          <dt>二代健保補充保費</dt><dd>−${fmt(nhi)}</dd>
+          <dt><b>實際拿到</b></dt><dd><b>${fmt(netDiv)}</b></dd></dl></div>
+        <div class="scenario mid"><h4>自己賣一點</h4><dl>
+          <dt>稅前現金</dt><dd>${fmt(gross)}</dd>
+          <dt>證交稅＋手續費</dt><dd>−${fmt(sellCost)}</dd>
+          <dt>所得稅</dt><dd>0（停徵）</dd>
+          <dt><b>實際拿到</b></dt><dd><b>${fmt(netSell)}</b></dd></dl></div>
+      </div>
+      <p>${yrs} 年後兩邊剩下的股票市值都是約 <strong>${fmt(v)} 元</strong>。${verdict}</p>`;
+  }
+  $("divcalc").addEventListener("input", run);
+  run();
+</script>
+</body>
+</html>
