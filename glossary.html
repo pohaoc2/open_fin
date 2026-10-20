@@ -24,7 +24,6 @@
 </div></header>
 
 <main>
-  <p class="breadcrumb"><a href="index.html">首頁</a> › 白話詞彙表</p>
   <h1>白話詞彙表</h1>
   <p class="lead">理專或說明書上的專有名詞，這裡用一兩句白話說清楚。全站畫虛線的詞，滑過或點一下也會跳出解釋。</p>
   <label for="g-search" class="small muted">搜尋詞彙</label>
@@ -32,6 +31,7 @@
   <p id="g-empty" class="muted" hidden>找不到符合的詞。歡迎到 <a href="about.html">關於頁</a> 看如何建議新增。</p>
   <noscript><p class="callout warn">這個頁面需要開啟 JavaScript 才能顯示詞彙清單。詞彙原始資料在 <code>assets/glossary.js</code>。</p></noscript>
   <div id="glossary"></div>
+  <p class="breadcrumb"><a href="index.html">首頁</a> › 白話詞彙表</p>
 </main>
 
 <footer class="site-footer"><div class="inner">
@@ -103,11 +103,11 @@ if (location.hash) {
 </script>
 <style>
 .glossary-list { margin: 0; }
-.glossary-list dt { font-weight: 700; font-size: 1.08rem; margin-top: 1em; scroll-margin-top: 80px; }
-.glossary-list dt.hit { color: var(--accent); }
+.glossary-list dt { font-family: var(--cjk-heavy); font-weight: 900; font-size: 1.15rem; margin-top: 1em; scroll-margin-top: 80px; }
+.glossary-list dt.hit { color: var(--seal); }
 .glossary-list dd { margin: 2px 0 0; padding-left: 0; }
 .glossary-list dd p { margin: 0 0 4px; }
-#g-search { font: inherit; width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); color: var(--text); }
+#g-search { font: inherit; width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 0; background: var(--paper); color: var(--ink); /* taste-skill-ignore: form field */ }
 </style>
 </body>
 </html>

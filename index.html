@@ -1,21 +1,14 @@
 <!doctype html>
-<html lang="zh-Hant-TW">
+<html lang="zh-Hant-TW" class="home no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>看懂再買｜包裝型金融商品白話百科</title>
-<meta name="description" content="用白話拆解 FCN、TRF、DCI、連動債、投資型保單：錢從哪裡來、風險在哪、歷史危機重跑、怎麼自己組。免費、開源、不是投資建議。">
+<meta name="description" content="用白話拆解 FCN、DCI、TRF、連動債、投資型保單等包裝型商品：利息從哪裡來、最壞會怎樣、銀行賺多少、能不能自己組。免費、開源、不是投資建議。">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/home.css">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<style>
-  .hero { padding: 12px 0 4px; }
-  .hero h1 { font-size: 2.2rem; margin-bottom: .2em; }
-  .promise { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin: 1.4em 0; padding: 0; list-style: none; }
-  .promise li { background: var(--surface-2); border-radius: var(--radius); padding: 10px 14px; font-size: .94rem; }
-  .promise b { display: block; color: var(--accent); }
-  .formula { font-size: 1.15rem; text-align: center; background: var(--surface); border: 1px dashed var(--accent); border-radius: var(--radius); padding: 16px; margin: 1.2em 0; }
-  .formula b { color: var(--danger); }
-</style>
+<script>document.documentElement.classList.remove("no-js");</script>
 </head>
 <body>
 <header class="site-header"><div class="inner">
@@ -29,90 +22,265 @@
     <a href="glossary.html">白話詞彙</a>
     <a href="about.html">關於</a>
   </nav>
-  <button class="theme-toggle" type="button" aria-label="切換深淺色">◐</button>
+  <button class="theme-toggle" type="button" aria-label="切換深淺色">深淺色</button>
 </div></header>
 
 <main>
-  <section class="hero">
-    <h1>理專跟你推了什麼？</h1>
-    <p class="lead">把看起來很複雜的金融商品拆開來，用白話告訴你：利息從哪裡來、最壞會怎樣、銀行賺多少，以及能不能自己用簡單的東西組出來。</p>
+  <section class="cover" aria-labelledby="title">
+    <div class="cover-photo"><img src="assets/img/crowd-1929.jpg" width="1920" height="1423" alt="1929 年 10 月 24 日，紐約證券交易所外擠滿人群"></div>
+    <div class="cover-card">
+      <h1 id="title"><span class="nb">理專推的商品，</span><span class="nb">拆開來看</span></h1>
+      <p class="lede">看起來很高的利息，通常是你幫別人承擔風險換來的。這份免費、開源的白話說明書告訴你：是哪一種風險、最壞會怎樣、銀行賺多少。</p>
+
+      <form class="decoder" onsubmit="return false" aria-label="利息拆解器">
+        <label for="yield">理專說年息 <input id="yield" type="number" inputmode="decimal" min="0" max="30" step="0.5" value="10"> %，拆開來是：</label>
+        <div class="split" aria-hidden="true">
+          <span class="p-rate" style="flex-basis:39%">一般利息</span>
+          <span class="p-risk" style="flex-basis:46%">你承擔風險換來的</span>
+          <span class="p-fee" style="flex-basis:15%">費用</span>
+        </div>
+        <p class="decoder-out" aria-live="polite">其中約 <b>3.9%</b> 是現在放美元短期公債就拿得到的利息；約 <b>4.6%</b> 是你幫別人承擔跌價或匯率風險收的錢；另外常見有 1–3% 被銀行和通路收走，這裡以 1.5% 估算。</p>
+        <p class="decoder-note">一般利息用美國 3 個月國庫券利率（<span data-asof>2026-09</span>，FRED）。費用是常見範圍的估計，實際要看商品條款。</p>
+      </form>
+
+      <ul class="facts">
+        <li><b class="numeral">8</b>種常見商品，一種一頁</li>
+        <li><b class="numeral">5</b>次歷史危機，商品放回去重跑</li>
+        <li><b class="numeral">25</b>個買之前該問的問題</li>
+      </ul>
+      <div class="cover-bottom">
+        <span class="credit">背景：1929 年 10 月 24 日，紐約證交所外的人群。</span>
+        <a class="action" href="#products">選一個商品拆開看</a>
+        <a href="questions.html">問理專清單</a>
+      </div>
+    </div>
   </section>
 
-  <div class="formula">
-    看起來很高的利息 ＝ 一般利息 ＋ <b>你幫別人承擔風險收到的錢</b> － 銀行的費用
-  </div>
+  <section class="products" id="products" aria-labelledby="products-h">
+    <div class="wrap">
+      <div class="products-col">
+        <h2 class="giant" id="products-h">商品</h2>
+        <p class="reveal">點開任何一項，看它拆開後是什麼、你賺什麼、你承擔什麼。</p>
+        <div class="bars">
+          <details open class="reveal">
+            <summary>FCN 固定配息連結股票債</summary>
+            <div class="bar-body">
+              <p>年息 8–15% 的「類定存」，其實是在幫別人的股票保跌價險。</p>
+              <dl><dt>拆開是</dt><dd>借錢給銀行 ＋ 賣出股票跌價保險</dd><dt>最壞</dt><dd>一籃子裡最差那檔跌破門檻，拿到跌掉的股票</dd></dl>
+              <a href="products/fcn.html">看 FCN 拆解 →</a>
+            </div>
+          </details>
+          <details class="reveal">
+            <summary>DCI 雙元貨幣</summary>
+            <div class="bar-body">
+              <p>比外幣定存多一點利息，代價是可能被換成跌價的貨幣。</p>
+              <dl><dt>拆開是</dt><dd>外幣定存 ＋ 賣出匯率保險</dd><dt>最壞</dt><dd>2008 年澳幣幾個月跌三成，被換成澳幣</dd></dl>
+              <a href="products/dci.html">看 DCI 拆解 →</a>
+            </div>
+          </details>
+          <details class="reveal">
+            <summary>TRF 目標可贖回遠期</summary>
+            <div class="bar-body">
+              <p>賺有上限，賠的時候加倍計算。2015 年人民幣大貶時傷了很多人。</p>
+              <dl><dt>拆開是</dt><dd>一連串選擇權，你多半是賣方</dd><dt>最壞</dt><dd>虧損是想賺金額的好幾倍；早期合約沒有上限</dd></dl>
+              <a href="products/trf.html">看 TRF 拆解 →</a>
+            </div>
+          </details>
+          <details class="reveal">
+            <summary>連動債／保本型商品</summary>
+            <div class="bar-body">
+              <p>「保本」的前提是發行機構不倒、你抱到到期。</p>
+              <dl><dt>拆開是</dt><dd>零息債 ＋ 一點點股票上漲的機會</dd><dt>最壞</dt><dd>發行機構倒閉，2008 年雷曼就是這樣</dd></dl>
+              <a href="products/structured-note.html">看連動債拆解 →</a>
+            </div>
+          </details>
+          <details class="reveal">
+            <summary>投資型保單（含類全委）</summary>
+            <div class="bar-body">
+              <p>保險加基金，再加好幾層費用。前幾年的保費可能被扣掉一大半。</p>
+              <dl><dt>拆開是</dt><dd>壽險保障 ＋ 基金 ＋ 多層費用</dd><dt>最壞</dt><dd>前幾年解約拿回很少；長期費用吃掉一大塊報酬</dd></dl>
+              <a href="products/ilp.html">看投資型保單拆解 →</a>
+            </div>
+          </details>
+          <details class="reveal">
+            <summary>月配息基金</summary>
+            <div class="bar-body">
+              <p>每月有錢入帳，但配息不等於賺錢，可能是從你的本金拿出來配的。</p>
+              <dl><dt>拆開是</dt><dd>一籃子債券或股票 ＋ 固定配息政策</dd><dt>最壞</dt><dd>一邊領配息，一邊淨值往下掉</dd></dl>
+              <a href="products/monthly-income-fund.html">看月配息基金拆解 →</a>
+            </div>
+          </details>
+          <details class="reveal">
+            <summary>目標到期債券基金</summary>
+            <div class="bar-body">
+              <p>看起來像幾年期定存，其實報酬不保證，提前贖回還要付費。</p>
+              <dl><dt>拆開是</dt><dd>一組到期日相近的債券 ＋ 費用</dd><dt>最壞</dt><dd>債券違約，或利率上升時中途要用錢</dd></dl>
+              <a href="products/target-maturity-bond.html">看目標到期債拆解 →</a>
+            </div>
+          </details>
+          <details class="reveal">
+            <summary>高股息 ETF vs 市值型 ETF</summary>
+            <div class="bar-body">
+              <p>配息多不等於賺得多。兩種都是一籃子股票，差在挑股票的規則。</p>
+              <dl><dt>拆開是</dt><dd>領股息＝把一部分股票變成現金</dd><dt>要比</dt><dd>含息的總報酬，以及稅和健保補充保費</dd></dl>
+              <a href="products/high-dividend-etf.html">看高股息 ETF 比較 →</a>
+            </div>
+          </details>
+        </div>
+      </div>
+      <figure class="plate reveal" style="--d:120ms">
+        <img src="assets/img/yen-bond.jpg" width="600" height="870" loading="lazy" alt="日本明治時期政府債券的樣本，蓋滿紅色「見本」字樣">
+        <figcaption>日本明治時期的政府債券樣本。紅字「見本」就是「樣本」。紙上寫得密密麻麻，買的人真的讀過嗎？</figcaption>
+      </figure>
+    </div>
+  </section>
 
-  <h2 id="pick" style="border-top:none">選一個你聽過的商品</h2>
-  <div class="cards">
-    <a class="card" href="products/fcn.html">
-      <h3>FCN 固定配息連結股票債</h3>
-      <p>年息 8–15% 的「類定存」？其實是在幫別人買股票跌價保險。</p>
-      <p><span class="pill danger">本金可能大虧</span><span class="pill warn">拿到股票</span></p>
-    </a>
-    <a class="card" href="products/dci.html">
-      <h3>DCI 雙元貨幣（組合式商品）</h3>
-      <p>比外幣定存多一點利息，代價是可能被換成跌價的貨幣。</p>
-      <p><span class="pill warn">匯率風險</span><span class="pill">期間短</span></p>
-    </a>
-    <a class="card" href="products/trf.html">
-      <h3>TRF 目標可贖回遠期</h3>
-      <p>賺有上限、賠的時候加倍算。2015 年人民幣大貶時傷了很多人。</p>
-      <p><span class="pill danger">虧損可能很大</span><span class="pill danger">槓桿</span></p>
-    </a>
-    <a class="card" href="products/structured-note.html">
-      <h3>連動債／保本型商品</h3>
-      <p>「保本」的前提是發行機構不倒、你抱到到期。2008 年雷曼倒了。</p>
-      <p><span class="pill warn">發行機構倒閉</span><span class="pill">綁很久</span></p>
-    </a>
-    <a class="card" href="products/ilp.html">
-      <h3>投資型保單（含類全委）</h3>
-      <p>保險加基金加上好幾層費用。長期下來，費用可能吃掉一大塊。</p>
-      <p><span class="pill warn">多層費用</span><span class="pill warn">解約費用</span></p>
-    </a>
-    <a class="card" href="products/monthly-income-fund.html">
-      <h3>月配息基金／高收益債基金</h3>
-      <p>每月有錢入帳，但配息不等於賺錢，可能是從你的本金拿出來配的。</p>
-      <p><span class="pill warn">配息來自本金</span><span class="pill warn">匯率風險</span></p>
-    </a>
-    <a class="card" href="products/target-maturity-bond.html">
-      <h3>目標到期債券基金</h3>
-      <p>看起來像幾年期定存，其實報酬不保證、可能踩到違約，提前贖回還要付費。</p>
-      <p><span class="pill warn">不是定存</span><span class="pill">提前贖回費</span></p>
-    </a>
-    <a class="card" href="products/high-dividend-etf.html">
-      <h3>高股息 ETF vs 市值型 ETF</h3>
-      <p>配息多不等於賺得多。兩種都是一籃子股票，差在挑股票的規則，要比含息的總報酬。</p>
-      <p><span class="pill warn">配息不等於報酬</span><span class="pill">稅與補充保費</span></p>
-    </a>
-    <a class="card" href="products/index.html">
-      <h3>八種商品一次比較 →</h3>
-      <p>拆開來各是什麼、你賺什麼、你承擔什麼，一張表看完。</p>
-    </a>
-  </div>
+  <section class="receipts" aria-labelledby="receipts-h">
+    <img src="assets/img/bond.jpg" width="1600" height="1200" loading="lazy" alt="美國南北戰爭時期南方邦聯發行的債券，附有一排可撕下的利息票">
+    <div class="receipts-text">
+      <div class="reveal">
+        <h2 id="receipts-h">拆開，就是收據</h2>
+        <p>每一種商品，都能拆成你看得懂的零件：存款、債券、保險、費用。下面是本金 NT$100 萬時，各項大概的金額。</p>
+        <p>背景是南方邦聯的債券。邦聯戰敗後，這些債券再也沒有兌付：「保本」要看發行者還在不在。</p>
+      </div>
+    </div>
+    <div class="slips">
+      <div class="slip">
+        <h3>FCN・一年</h3>
+        <div class="rule" aria-hidden="true"></div>
+        <div class="row"><span>存款利息</span><b>約 4 萬</b></div>
+        <div class="row"><span>跌價保險費</span><b>約 7–10 萬</b></div>
+        <div class="row"><span>銀行與通路</span><b>−1–3 萬</b></div>
+        <div class="rule" aria-hidden="true"></div>
+        <div class="row total"><span>你拿到</span><b>10 萬</b></div>
+        <p class="worst">最壞：拿到跌掉一半的股票</p>
+        <a href="products/fcn.html">FCN 拆解</a>
+      </div>
+      <div class="slip">
+        <h3>DCI・一個月</h3>
+        <div class="rule" aria-hidden="true"></div>
+        <div class="row"><span>定存利息</span><b>約 3,300</b></div>
+        <div class="row"><span>匯率保險費</span><b>約 4,000</b></div>
+        <div class="row total"><span>這一期拿到</span><b>約 6,700</b></div>
+        <p class="worst">最壞：被換成跌價的貨幣</p>
+        <a href="products/dci.html">DCI 拆解</a>
+      </div>
+      <div class="slip">
+        <h3>保本連動債・五年</h3>
+        <div class="rule" aria-hidden="true"></div>
+        <div class="row"><span>零息債</span><b>約 86 萬</b></div>
+        <div class="row"><span>上漲機會</span><b>約 10 萬</b></div>
+        <div class="row"><span>費用</span><b>約 3–4 萬</b></div>
+        <div class="rule" aria-hidden="true"></div>
+        <div class="row total"><span>到期拿回</span><b>100 萬起</b></div>
+        <p class="worst">最壞：發行機構倒閉</p>
+        <a href="products/structured-note.html">連動債拆解</a>
+      </div>
+      <div class="slip">
+        <h3>投資型保單・20 年</h3>
+        <div class="rule" aria-hidden="true"></div>
+        <div class="row"><span>每年繳</span><b>12 萬</b></div>
+        <div class="row"><span>自己買 ETF</span><b>約 457 萬</b></div>
+        <div class="row"><span>保單帳戶</span><b>約 332 萬</b></div>
+        <p class="worst">差距：約 125 萬</p>
+        <a href="products/ilp.html">投資型保單拆解</a>
+      </div>
+      <div class="slip">
+        <h3>月配息・一年</h3>
+        <div class="rule" aria-hidden="true"></div>
+        <div class="row"><span>領到配息</span><b>6 萬</b></div>
+        <div class="row"><span>淨值變化</span><b>−9 萬</b></div>
+        <div class="rule" aria-hidden="true"></div>
+        <div class="row total"><span>實際總報酬</span><b>−3 萬</b></div>
+        <p class="worst">配息不等於賺錢</p>
+        <a href="products/monthly-income-fund.html">月配息基金拆解</a>
+      </div>
+      <div class="slip">
+        <h3>TRF・兩年</h3>
+        <div class="rule" aria-hidden="true"></div>
+        <div class="row"><span>猜對時</span><b>每月小賺</b></div>
+        <div class="row"><span>賺到上限</span><b>自動結束</b></div>
+        <div class="row"><span>猜錯時</span><b>兩倍計算</b></div>
+        <p class="worst">2014–16 重跑：約 −336 萬</p>
+        <a href="products/trf.html">TRF 拆解</a>
+      </div>
+    </div>
+  </section>
 
-  <h2 id="tools">每個商品頁都有</h2>
-  <div class="cards">
-    <div class="card"><h3>白話拆解卡</h3><p>一張卡看懂：你以為買到什麼、實際上買到什麼、最慘會怎樣。</p></div>
-    <a class="card" href="tools/stress-test.html"><h3>歷史危機重跑</h3><p>把商品放回 2000 網路泡沫、2008 金融海嘯、2015 人民幣大貶、2020 疫情，看看會發生什麼。</p></a>
-    <a class="card" href="questions.html"><h3>問理專清單</h3><p>買之前該問的問題，附「好的回答」和「警訊」。可以列印帶去銀行。</p></a>
-    <a class="card" href="learn/index.html"><h3>自己組的方法</h3><p>用現金、債券、指數 ETF、選擇權組出類似效果，順便看懂自組的缺點。</p></a>
-  </div>
+  <section class="crises" aria-labelledby="crises-h">
+    <div class="crises-card reveal">
+      <h2 id="crises-h">危機一定會來</h2>
+      <ol class="timeline">
+        <li><span class="yr numeral">2000</span><span>網路泡沫破裂，美股跌了兩年半</span><span class="mv numeral">−40%</span></li>
+        <li><span class="yr numeral">2008</span><span>雷曼倒閉，「保本」連動債跟著出事</span><span class="mv numeral">−51%</span></li>
+        <li><span class="yr numeral">2015</span><span>人民幣大貶，TRF 加倍虧損</span><span class="mv numeral">−14%</span></li>
+        <li><span class="yr numeral">2020</span><span>疫情崩盤，一個月內跌三成以上</span><span class="mv numeral">−34%</span></li>
+        <li><span class="yr numeral">2022</span><span>升息，股票債券一起跌</span><span class="mv numeral">−16%</span></li>
+      </ol>
+      <figure>
+        <img src="assets/img/lehman-2008.jpg" width="1400" height="933" loading="lazy" alt="2008 年 9 月 15 日夜晚，紐約雷曼兄弟總部外聚集的記者與路人">
+        <figcaption>2008 年 9 月 15 日，雷曼兄弟聲請破產當晚的紐約總部外。</figcaption>
+      </figure>
+      <a class="more" href="tools/stress-test.html">把商品放回這幾年重跑 →</a>
+      <p class="note">美股以月平均價計，2020 年以每日收盤計；2015 年為人民幣兌美元。</p>
+    </div>
+  </section>
 
-  <h2 id="principles">我們的原則</h2>
-  <ul class="promise">
-    <li><b>不是投資建議</b>只講原理和風險，不叫你買或賣。</li>
-    <li><b>不收錢</b>沒有廣告、沒有導購、沒有佣金。</li>
-    <li><b>中立</b>每個商品也寫「可能適合誰」。</li>
-    <li><b>有出處</b>數據與說法附來源，算法全部公開。</li>
-    <li><b>開源</b>任何人都能檢查、指正、補充。</li>
-  </ul>
-  <p class="muted small">這些商品本身不違法，也不一定不好。問題通常出在「沒看懂就買」。本站希望你買之前能看懂；看懂之後要不要買，是你的決定。</p>
+  <section class="itinerary" aria-labelledby="trip-h">
+    <div class="wrap">
+      <div class="reveal">
+        <h2 id="trip-h">去銀行之前</h2>
+        <p>不用變成專家，只要在簽名前多花二十分鐘，看懂你買的是什麼。</p>
+      </div>
+      <div class="ticket reveal" style="--d:120ms">
+        <h3>出門前</h3>
+        <div class="leg"><a href="products/index.html">讀那個商品的白話拆解卡</a><span class="dots"></span><span class="t">5 分鐘</span></div>
+        <div class="leg"><a href="tools/stress-test.html">放回 2008 年跑一次壓力測試</a><span class="dots"></span><span class="t">3 分鐘</span></div>
+        <div class="leg"><a href="questions.html">列印問理專清單</a><span class="dots"></span><span class="t">1 分鐘</span></div>
+        <h3>在銀行</h3>
+        <div class="leg"><span>問：最多會賠多少？</span><span class="dots"></span><span class="t">要有金額</span></div>
+        <div class="leg"><span>問：銀行從這筆賺多少？</span><span class="dots"></span><span class="t">要有數字</span></div>
+        <div class="leg"><span>拿產品說明書回家看</span><span class="dots"></span><span class="t">不當場簽</span></div>
+        <h3>回家後</h3>
+        <div class="leg"><span>對照自組方法，比一比費用</span><span class="dots"></span><span class="t">10 分鐘</span></div>
+        <div class="leg"><span>睡一晚再決定</span><span class="dots"></span><span class="t">一晚</span></div>
+        <div class="result"><span>你帶走的：看懂之後的決定</span><span>約 20 分鐘</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reply" aria-labelledby="reply-h">
+    <div class="reply-text reveal">
+      <h3>我們的原則</h3>
+      <p>本站只講原理和風險，不叫你買或賣。不收錢、沒有廣告、沒有導購。每個商品也寫「可能適合誰」，因為它們本身不違法，問題通常出在沒看懂就買。</p>
+    </div>
+    <div class="reply-card">
+      <h2 id="reply-h">帶著清單去銀行</h2>
+      <p>25 個買之前該問的問題，每題附「好的回答」和「警訊」。印出來，一題一題問。</p>
+      <a class="bar-action" href="questions.html">打開問理專清單</a>
+    </div>
+  </section>
 </main>
 
-<footer class="site-footer"><div class="inner">
-  <p><strong>本站僅供教育，不是投資建議。</strong>不推薦任何金融機構或個別商品，也不收費、不放廣告。內容可能有錯，請以商品公開說明書、保單條款與主管機關公告為準，重大決定前可諮詢無利益關係的專業人士。</p>
-  <p>文字內容採 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hant">CC BY-SA 4.0</a>，程式碼採 MIT 授權。<a href="about.html">關於本站與如何參與</a></p>
-</div></footer>
+<footer class="back">
+  <div class="back-panel">
+    <svg class="scallops" viewBox="0 0 1200 41" preserveAspectRatio="none" aria-hidden="true"><path d="M0 41 A50 40 0 0 1 100 41 A50 40 0 0 1 200 41 A50 40 0 0 1 300 41 A50 40 0 0 1 400 41 A50 40 0 0 1 500 41 A50 40 0 0 1 600 41 A50 40 0 0 1 700 41 A50 40 0 0 1 800 41 A50 40 0 0 1 900 41 A50 40 0 0 1 1000 41 A50 40 0 0 1 1100 41 A50 40 0 0 1 1200 41 Z"/></svg>
+    <div class="stamp"><img src="assets/img/yen-bond.jpg" width="600" height="870" loading="lazy" alt="債券樣本局部"></div>
+    <div>
+      <h2>看懂，再決定</h2>
+      <p><strong>本站僅供教育，不是投資建議。</strong>不推薦任何金融機構或個別商品，也不收費、不放廣告。內容可能有錯，請以公開說明書、保單條款與主管機關公告為準。</p>
+      <p>發現錯誤或看不懂的地方，歡迎告訴我們。</p>
+    </div>
+    <ul class="addr">
+      <li><a href="https://github.com/pohaoc2/open_fin">原始碼與資料（GitHub）</a></li>
+      <li><a href="https://github.com/pohaoc2/open_fin/issues">回報錯誤或看不懂的地方</a></li>
+      <li><a href="about.html">關於本站與如何參與</a></li>
+      <li><a href="glossary.html">白話詞彙表</a></li>
+    </ul>
+    <p class="imprint">文字採 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hant">CC BY-SA 4.0</a>，程式碼採 MIT。圖片：<a href="https://commons.wikimedia.org/wiki/File:Crowds_gathering_outside_New_York_Stock_Exchange_(3).jpg">〈Crowds gathering outside New York Stock Exchange〉</a> Associated Press，公有領域；<a href="https://commons.wikimedia.org/w/index.php?curid=65676305">〈Bond certificate〉</a> <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>；<a href="https://commons.wikimedia.org/w/index.php?curid=4795571">〈Lehman Brothers-NYC-20080915〉</a> Robert Scoble，<a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>；<a href="https://commons.wikimedia.org/w/index.php?curid=149786255">〈Sample of Unregistered Bond Certificates Exchangeable to Gold Bank Notes (100 Yen)〉</a> <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>；皆來自 Wikimedia Commons。</p>
+  </div>
+</footer>
 <script type="module" src="assets/site.js"></script>
+<script type="module" src="assets/home.js"></script>
 </body>
 </html>

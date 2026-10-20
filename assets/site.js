@@ -62,3 +62,14 @@ for (const el of document.querySelectorAll("dfn[data-term]")) {
 }
 document.addEventListener("click", (e) => { if (tip && !tip.contains(e.target)) hideTip(); });
 document.addEventListener("keydown", (e) => { if (e.key === "Escape") hideTip(); });
+
+// 內頁進場：標題、拆解卡、情境、清單等依序淡入，只播一次
+if (!root.classList.contains("home") && "IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const sel = "main > h1, main > .lead, main > h2, main > .breakdown, main > .callout, main > .fees, main > .cards, main > .table-wrap, main > .toc";
+  const els = document.querySelectorAll(sel);
+  root.classList.add("js-reveal");
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+  }, { rootMargin: "0px 0px -6% 0px" });
+  els.forEach((el, i) => { el.classList.add("rv"); el.style.setProperty("--d", (i % 3) * 70 + "ms"); io.observe(el); });
+}

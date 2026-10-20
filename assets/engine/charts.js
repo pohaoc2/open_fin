@@ -32,8 +32,8 @@ export function lineChart(container, opts) {
   for (const s of series) {
     const item = document.createElement("span");
     const sw = document.createElement("i");
-    sw.style.background = s.color;
-    if (s.dash) sw.className = "dash";
+    if (s.dash) { sw.className = "dash"; sw.style.borderTopColor = s.color; }
+    else sw.style.background = s.color;
     item.append(sw, document.createTextNode(s.name));
     legend.append(item);
   }
@@ -61,8 +61,8 @@ export function lineChart(container, opts) {
     svg?.remove();
     svg = el("svg", { viewBox: `0 0 ${W} ${H}`, width: W, height: H, role: "img", "aria-label": series.map((s) => s.name).join("、") + " 走勢圖" });
     for (const t of ticks) {
-      svg.append(el("line", { x1: pad.l, x2: W - pad.r, y1: y(t), y2: y(t) }, "stroke: var(--border); stroke-width: 1"));
-      const tx = el("text", { x: pad.l - 6, y: y(t) + 4, "text-anchor": "end" }, "fill: var(--muted); font-size: 11px");
+      svg.append(el("line", { x1: pad.l, x2: W - pad.r, y1: y(t), y2: y(t) }, "stroke: var(--border); stroke-width: 1; stroke-opacity: .6"));
+      const tx = el("text", { x: pad.l - 6, y: y(t) + 4, "text-anchor": "end" }, "fill: var(--muted); font-size: 13px");
       tx.textContent = yFormat(t);
       svg.append(tx);
     }
@@ -70,7 +70,7 @@ export function lineChart(container, opts) {
     const xticks = Math.min(n, W < 480 ? 4 : 7);
     for (let k = 0; k < xticks; k++) {
       const i = Math.round((k * (n - 1)) / Math.max(1, xticks - 1));
-      const tx = el("text", { x: x(i), y: H - 8, "text-anchor": k === 0 ? "start" : k === xticks - 1 ? "end" : "middle" }, "fill: var(--muted); font-size: 11px");
+      const tx = el("text", { x: x(i), y: H - 8, "text-anchor": k === 0 ? "start" : k === xticks - 1 ? "end" : "middle" }, "fill: var(--muted); font-size: 13px");
       tx.textContent = labels[i];
       svg.append(tx);
     }
@@ -90,7 +90,7 @@ export function lineChart(container, opts) {
       svg.append(el("circle", { cx: x(mk.index), cy: y(v), r: 5 }, `fill: var(--surface); stroke: var(--danger); stroke-width: 2.5`));
       if (mk.label) {
         const right = x(mk.index) > W * 0.7;
-        const tx = el("text", { x: x(mk.index) + (right ? -8 : 8), y: y(v) - 8, "text-anchor": right ? "end" : "start" }, "fill: var(--danger); font-size: 12px; font-weight: 700; paint-order: stroke; stroke: var(--surface); stroke-width: 3px");
+        const tx = el("text", { x: x(mk.index) + (right ? -8 : 8), y: y(v) - 8, "text-anchor": right ? "end" : "start" }, "fill: var(--danger); font-size: 13px; font-weight: 700; paint-order: stroke; stroke: var(--surface); stroke-width: 3px");
         tx.textContent = mk.label;
         svg.append(tx);
       }
