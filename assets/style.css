@@ -2,9 +2,9 @@
  * 構想：每一頁都是一份放在酒紅桌面上的「產品說明書」，紙上是白話註解，品牌是一顆朱紅印章。
  * 元件：.breakdown（白話拆解卡）、.risk（風險燈號）、.callout、.qa（問理專）、.scenarios、
  *       .fees、.steps、.cards（改為整列條目）、.pill（純文字標籤）、dfn[data-term]（詞彙提示）
- * 字型：Bebas Neue（數字）、Noto Serif TC（其餘全部）
+ * 字型：Noto Serif TC（大標題與印章）、Noto Sans TC（內文、標籤、數字，螢幕上較易讀）
  */
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Serif+TC:wght@400;600;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@900&display=swap");
 
 :root {
   /* 桌面（頁面底色）與印在桌面上的字 */
@@ -44,8 +44,8 @@
   --chart-4: #7d7276;
   --radius: 0px;
 
-  --display: "Bebas Neue", "Noto Serif TC", serif;
-  --serif: "Noto Serif TC", "PingFang TC", "Microsoft JhengHei", serif;
+  --display: var(--sans);
+  --sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
   --cjk-heavy: "Noto Serif TC", "PingFang TC", serif;
   --maxw: 880px;
   --gutter: clamp(16px, 3vw, 32px);
@@ -75,7 +75,7 @@
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
 body {
-  margin: 0; background: var(--desk); color: var(--ink); font-family: var(--serif);
+  margin: 0; background: var(--desk); color: var(--ink); font-family: var(--sans); letter-spacing: .02em;
   font-size: 18px; line-height: 1.8; font-kerning: normal;
 }
 a { color: var(--seal); text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
@@ -126,7 +126,7 @@ main::before {
 h1, h2, h3, h4 { font-family: var(--cjk-heavy); font-weight: 900; letter-spacing: -.01em; text-wrap: balance; }
 h1 { font-size: clamp(2.2rem, 1.2rem + 3.4vw, 3.9rem); line-height: 1.12; margin: .3em 0 .35em; padding-right: 2.5em; word-break: keep-all; overflow-wrap: anywhere; }
 h2 { font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.1rem); line-height: 1.25; margin: 2.6em 0 .6em; }
-h3 { font-size: 1.22rem; line-height: 1.4; margin: 1.8em 0 .4em; font-weight: 600; }
+h3 { font-size: 1.22rem; line-height: 1.4; margin: 1.8em 0 .4em; }
 .lead { font-size: clamp(1.15rem, 1.05rem + .4vw, 1.35rem); line-height: 1.7; color: var(--ink); margin-top: 0; }
 .muted { color: var(--ink-soft); }
 .small { font-size: .9rem; }
@@ -141,10 +141,10 @@ strong, b { font-weight: 700; }
 
 /* ---------- 白話拆解卡：一張蓋過章的條款卡 ---------- */
 .breakdown { background: var(--paper-2); margin: 1.6em 0; }
-.breakdown header { background: var(--ink); color: var(--paper); padding: 14px 22px; font-family: var(--cjk-heavy); font-weight: 900; font-size: 1.2rem; }
+.breakdown header { background: var(--ink); color: var(--paper); padding: 14px 22px; font-family: var(--sans); font-weight: 700; font-size: 1.2rem; }
 .breakdown dl { margin: 0; display: grid; grid-template-columns: 8.5em 1fr; }
 .breakdown dt, .breakdown dd { padding: 12px 22px; margin: 0; max-width: none; }
-.breakdown dt { font-weight: 900; font-family: var(--cjk-heavy); color: var(--seal); }
+.breakdown dt { font-weight: 700; font-family: var(--sans); color: var(--seal); }
 .breakdown dt:nth-of-type(even), .breakdown dt:nth-of-type(even) + dd { background: var(--paper-3); }
 .breakdown footer { padding: 14px 22px; background: var(--paper-3); }
 @media (max-width: 600px) {
@@ -170,13 +170,13 @@ strong, b { font-weight: 700; }
 .callout.good { background: var(--good-soft); }
 .callout > :first-child { margin-top: 0; }
 .callout > :last-child { margin-bottom: 0; }
-.callout > strong:first-child { display: block; font-family: var(--cjk-heavy); font-weight: 900; }
+.callout > strong:first-child { display: block; font-family: var(--sans); font-weight: 700; }
 
 /* ---------- 表格（保留格線） ---------- */
 .table-wrap { overflow-x: auto; margin: 1.2em 0; }
 table { border-collapse: collapse; width: 100%; font-size: 1rem; }
 th, td { border-bottom: 1px solid var(--border); padding: 10px 12px; text-align: left; vertical-align: top; }
-th { background: var(--paper-2); font-family: var(--cjk-heavy); font-weight: 900; }
+th { background: var(--paper-2); font-family: var(--sans); font-weight: 700; }
 td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 
 /* ---------- 最好／普通／最壞 ---------- */
@@ -187,7 +187,7 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .scenario.best { background: var(--good-soft); }
 .scenario.mid { background: var(--paper-2); }
 .scenario.worst { background: var(--danger-soft); }
-.scenario .big { font-family: var(--display); font-size: 2.6rem; line-height: 1; letter-spacing: .01em; font-variant-numeric: tabular-nums; }
+.scenario .big { font-family: var(--display); font-weight: 900; font-size: 2.6rem; line-height: 1; letter-spacing: .01em; font-variant-numeric: tabular-nums; }
 
 /* ---------- 費用長條 ---------- */
 .fees { display: grid; gap: 8px; margin: 1.2em 0; }
@@ -199,8 +199,8 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .qa { list-style: none; padding: 0; counter-reset: q; }
 .qa > li { counter-increment: q; background: var(--paper-2); padding: 18px 20px 16px 64px; margin: 8px 0; position: relative; break-inside: avoid; max-width: none; }
 .qa > li:nth-child(even) { background: var(--paper-3); }
-.qa > li::before { content: counter(q); position: absolute; left: 18px; top: 14px; font-family: var(--display); font-size: 2rem; line-height: 1; color: var(--seal); }
-.qa .q { font-family: var(--cjk-heavy); font-weight: 900; display: block; margin-bottom: 6px; }
+.qa > li::before { content: counter(q); position: absolute; left: 18px; top: 14px; font-family: var(--display); font-weight: 900; font-size: 1.6rem; line-height: 1.1; color: var(--seal); }
+.qa .q { font-family: var(--sans); font-weight: 700; display: block; margin-bottom: 6px; }
 .qa .ok, .qa .bad { display: block; font-size: 1rem; }
 .qa .ok::before { content: "好的回答："; color: var(--good); font-weight: 700; }
 .qa .bad::before { content: "警訊："; color: var(--seal); font-weight: 700; }
@@ -227,12 +227,12 @@ a.card:hover h3, a.card:hover p, a.card:hover .pill { color: var(--paper); }
 /* ---------- 步驟 ---------- */
 .steps { counter-reset: s; list-style: none; padding: 0; }
 .steps > li { counter-increment: s; position: relative; padding: 4px 0 14px 52px; }
-.steps > li::before { content: counter(s); position: absolute; left: 0; top: 0; font-family: var(--display); font-size: 2.1rem; line-height: 1; color: var(--seal); }
+.steps > li::before { content: counter(s); position: absolute; left: 0; top: 0; font-family: var(--display); font-weight: 900; font-size: 1.6rem; line-height: 1.1; color: var(--seal); }
 
 /* ---------- 詞彙提示 ---------- */
 dfn[data-term] { font-style: normal; text-decoration: underline dotted var(--seal) 2px; text-underline-offset: 4px; cursor: help; }
 .term-tip { position: absolute; z-index: 50; max-width: 320px; background: var(--ink); color: var(--paper); font-size: .95rem; line-height: 1.6; padding: 12px 14px; box-shadow: 0 10px 30px rgba(0,0,0,.3); } /* taste-skill-ignore: floating tooltip */
-.term-tip b { display: block; margin-bottom: 2px; font-family: var(--cjk-heavy); }
+.term-tip b { display: block; margin-bottom: 2px; font-family: var(--sans); }
 .term-tip a { color: inherit; }
 
 /* ---------- 表單元件 ---------- */
